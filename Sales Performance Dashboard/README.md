@@ -1,0 +1,1 @@
+Interactive Tableau dashboard analyzing regional sales trends and product KPIs to support business decision-making. The visualization highlights differences in sales performance across categories and identifies trend patterns over time.
