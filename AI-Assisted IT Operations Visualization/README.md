@@ -1,1 +1,1 @@
-Tableau dashboard analyzing IT operational metrics, incident trends, and AI-assisted reporting insights. The visualization identifies operational patterns and supports data-driven IT analysis.
+Tableau visualization analyzing monthly IT ticket volume trends over time. The dashboard highlights operational fluctuations, compares activity against average ticket volume, and supports data-driven IT performance analysis.
