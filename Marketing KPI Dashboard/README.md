@@ -1,0 +1,1 @@
+Power BI dashboard analyzing marketing engagement, conversion trends, and KPI performance metrics. The visualization highlights campaign effectiveness and supports data-driven business decision-making.
