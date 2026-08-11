@@ -1,199 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>William Guenther | Business Analytics</title>
-  <meta name="description" content="William Guenther — business analytics, marketing analytics, digital measurement, and data visualization.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William Guenther | Business Analytics</title>
+<meta name="description" content="William Guenther — business analytics, marketing analytics, digital measurement, and data visualization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="cursor-dot"></div>
-  <div class="cursor-circle"></div>
-  <header class="site-header">
-    <nav class="navbar">
-      <a class="name-logo" href="index.html">william.guenther</a>
-      <div class="nav-center">
-        <a class="nav-item active" href="index.html">
-          <span>01</span>About
-        </a>
-        <a class="nav-item" href="projects.html">
-          <span>02</span>Projects
-        </a>
-        <a class="nav-item" href="work.html">
-          <span>03</span>Work
-        </a>
-      </div>
-      <div class="nav-right">
-        <a class="resume-nav" href="resume.pdf" target="_blank">Résumé ↗</a>
-        <a class="contact-nav" href="mailto:YOUR_EMAIL@gmail.com">Get in touch</a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="about-section">
-      <div class="section-marker reveal">
-        <div class="marker-line"></div>
-        <span>ABOUT</span>
-      </div>
-      <div class="about-layout">
-        <aside class="identity-column reveal reveal-delay-1">
-          <div class="photo-container">
-            <img src="profile.jpg" alt="William Guenther" class="profile-photo">
-            <div class="photo-glow"></div>
-          </div>
-          <div class="identity-details">
-            <div class="detail-row">
-              <span class="detail-label">BASED IN</span>
-              <span class="detail-value">New Jersey</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">EDUCATION</span>
-              <span class="detail-value">MBA · Business Analytics</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">FOCUS</span>
-              <span class="detail-value">Analytics · Marketing · BI</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">STATUS</span>
-              <span class="detail-value status-value">
-                <span class="status-dot"></span>
-                Open to opportunities
-              </span>
-            </div>
-          </div>
-        </aside>
-        <div class="intro-column">
-          <p class="intro-kicker reveal reveal-delay-1">BUSINESS + DATA</p>
-          <h1 class="hero-title reveal reveal-delay-2">
-            I turn data into
-            <span class="orange-text">decisions.</span>
-          </h1>
-          <div class="intro-grid">
-            <div class="intro-copy reveal reveal-delay-3">
-              <p>
-                I'm <strong>William Guenther</strong>, a business analytics and marketing professional interested in understanding how businesses perform, how customers behave, and
-                <span class="orange-text">what the data says to do next.</span>
-              </p>
-              <p>
-                My work sits at the intersection of analytics, marketing, and business strategy. I build dashboards, analyze performance, measure digital behavior, and turn findings into recommendations people can actually use.
-              </p>
-              <p>
-                I'm especially interested in marketing analytics, business intelligence, digital measurement, and using data to solve practical business problems.
-              </p>
-              <div class="intro-buttons">
-                <a href="projects.html" class="primary-button interactive">
-                  See my projects <span>→</span>
-                </a>
-                <a href="resume.pdf" target="_blank" class="text-button interactive">
-                  Résumé ↗
-                </a>
-              </div>
-            </div>
 
-            <div class="data-visual reveal reveal-delay-3">
-              <div class="visual-top">
-                <span>PERFORMANCE</span>
-                <span class="live-indicator">
-                  <i></i>
-                  LIVE
-                </span>
-              </div>
-              <div class="metric-row">
-                <div class="metric">
-                  <span class="metric-label">ANALYSIS</span>
-                  <strong>100%</strong>
-                </div>
-                <div class="metric">
-                  <span class="metric-label">SIGNAL</span>
-                  <strong>+24.8%</strong>
-                </div>
-              </div>
-              <div class="chart">
-                <div class="chart-line line-one"></div>
-                <div class="chart-line line-two"></div>
-                <div class="chart-line line-three"></div>
-                <div class="bars">
-                  <span style="--height: 36%"></span>
-                  <span style="--height: 51%"></span>
-                  <span style="--height: 43%"></span>
-                  <span style="--height: 69%"></span>
-                  <span style="--height: 60%"></span>
-                  <span style="--height: 79%"></span>
-                  <span style="--height: 68%"></span>
-                  <span style="--height: 91%"></span>
-                </div>
-              </div>
-              <div class="visual-bottom">
-                <span>JAN</span>
-                <span>BUSINESS PERFORMANCE</span>
-                <span>AUG</span>
-              </div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html">william<span>.</span>guenther</a>
+
+    <nav class="nav__links" id="navLinks">
+      <a class="nav__link is-active" href="index.html"><span>01</span>About</a>
+      <a class="nav__link" href="projects.html"><span>02</span>Projects</a>
+      <a class="nav__link" href="work.html"><span>03</span>Work</a>
+      <a class="nav__link nav__link--mobile-only" href="resume.pdf" target="_blank">Résumé ↗</a>
+      <a class="nav__link nav__link--mobile-only" href="mailto:YOUR_EMAIL@gmail.com">Get in touch</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__resume" href="resume.pdf" target="_blank">Résumé ↗</a>
+      <a class="btn-outline" href="mailto:YOUR_EMAIL@gmail.com">Get in touch</a>
+    </div>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero__grid">
+
+      <div class="hero__intro">
+        <p class="eyebrow reveal">Business + Data</p>
+
+        <h1 class="hero__title reveal reveal-d1">
+          I turn data<br>
+          into better<br>
+          <span class="accent">decisions.</span>
+        </h1>
+
+        <p class="hero__meta reveal reveal-d2">
+          New Jersey &nbsp;·&nbsp; MBA, Business Analytics &nbsp;·&nbsp;
+          <span class="status-dot"></span>Open to opportunities
+        </p>
+
+        <p class="hero__lead reveal reveal-d2">
+          I'm <strong>William Guenther</strong>, a business analytics and marketing professional
+          interested in understanding how businesses perform, how customers behave, and
+          <span class="accent">what the data says to do next.</span>
+        </p>
+
+        <p class="hero__lead reveal reveal-d2">
+          My work sits at the intersection of analytics, marketing, and business strategy.
+          I build dashboards, analyze performance, measure digital behavior, and turn findings
+          into recommendations people can actually use.
+        </p>
+
+        <div class="hero__actions reveal reveal-d3">
+          <a href="projects.html" class="btn-primary interactive">See my projects <span>→</span></a>
+          <a href="resume.pdf" target="_blank" class="btn-text interactive">Résumé ↗</a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal reveal-d3">
+        <div class="visual-card">
+          <div class="visual-card__header">
+            <span class="visual-card__title">Sample Dashboard</span>
+            <span class="visual-card__tag">Demo data</span>
+          </div>
+
+          <div class="visual-card__stats">
+            <div class="visual-stat">
+              <span class="visual-stat__label">Conversion</span>
+              <strong>3.8%</strong>
             </div>
+            <div class="visual-stat">
+              <span class="visual-stat__label">Retention</span>
+              <strong>62%</strong>
+            </div>
+            <div class="visual-stat">
+              <span class="visual-stat__label">Growth</span>
+              <strong class="accent">+14%</strong>
+            </div>
+          </div>
+
+          <div class="visual-card__chart">
+            <svg class="chart-line" viewBox="0 0 280 70" preserveAspectRatio="none">
+              <polyline points="0,55 35,42 70,48 105,28 140,34 175,16 210,24 245,8 280,14" />
+            </svg>
+            <div class="chart-bars">
+              <span style="--h:34%"></span>
+              <span style="--h:48%"></span>
+              <span style="--h:40%"></span>
+              <span style="--h:63%"></span>
+              <span style="--h:55%"></span>
+              <span style="--h:74%"></span>
+              <span style="--h:66%"></span>
+              <span style="--h:88%"></span>
+            </div>
+          </div>
+
+          <div class="visual-card__footer">
+            <span>Jan</span>
+            <span>Illustrative data for design purposes only</span>
+            <span>Aug</span>
           </div>
         </div>
       </div>
-    </section>
-    <section class="specialties-section">
-      <div class="section-marker">
-        <div class="marker-line"></div>
-        <span>WHAT I DO</span>
-      </div>
-      <div class="specialty-heading">
-        <h2>Where business questions<br>meet data.</h2>
-        <p>
-          I focus on analysis that helps explain performance, uncover opportunities, and make better decisions.
-        </p>
-      </div>
-      <div class="specialty-list">
-        <article class="specialty">
-          <div class="specialty-number">01</div>
-          <div>
-            <h3>Marketing Analytics</h3>
-            <p>
-              Campaign performance, acquisition, conversion behavior, customer metrics, and marketing effectiveness.
-            </p>
-          </div>
-          <div class="specialty-arrow">↗</div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow reveal">What I do</p>
+      <h2 class="section__title reveal">Where business questions<br>meet data.</h2>
+      <p class="section__lead reveal">
+        I focus on analysis that helps explain performance, uncover opportunities, and make better decisions.
+      </p>
+
+      <div class="specialty-grid">
+        <article class="specialty reveal">
+          <span class="specialty__index">01</span>
+          <h3>Marketing Analytics</h3>
+          <p>Campaign performance, acquisition, conversion behavior, customer metrics, and marketing effectiveness.</p>
         </article>
-        <article class="specialty">
-          <div class="specialty-number">02</div>
-          <div>
-            <h3>Business Intelligence</h3>
-            <p>
-              Dashboards and reporting that transform raw business data into useful performance information.
-            </p>
-          </div>
-          <div class="specialty-arrow">↗</div>
+        <article class="specialty reveal">
+          <span class="specialty__index">02</span>
+          <h3>Business Intelligence</h3>
+          <p>Dashboards and reporting that transform raw business data into useful performance information.</p>
         </article>
-        <article class="specialty">
-          <div class="specialty-number">03</div>
-          <div>
-            <h3>Digital Measurement</h3>
-            <p>
-              GA4, Google Tag Manager, conversion tracking, and understanding how people behave across digital experiences.
-            </p>
-          </div>
-          <div class="specialty-arrow">↗</div>
+        <article class="specialty reveal">
+          <span class="specialty__index">03</span>
+          <h3>Digital Measurement</h3>
+          <p>GA4, Google Tag Manager, conversion tracking, and understanding how people behave across digital experiences.</p>
         </article>
-        <article class="specialty">
-          <div class="specialty-number">04</div>
-          <div>
-            <h3>Data Visualization</h3>
-            <p>
-              Clear visual storytelling through Power BI, Tableau, Excel, and analytical reporting.
-            </p>
-          </div>
-          <div class="specialty-arrow">↗</div>
+        <article class="specialty reveal">
+          <span class="specialty__index">04</span>
+          <h3>Data Visualization</h3>
+          <p>Clear visual storytelling through Power BI, Tableau, Excel, and analytical reporting.</p>
         </article>
       </div>
-    </section>
-    <section class="tools-section">
-      <div class="tools-heading">
-        <span>TOOLKIT</span>
-      </div>
-      <div class="tools">
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <p class="eyebrow reveal">Toolkit</p>
+      <div class="toolkit reveal">
         <span>Power BI</span>
         <span>Tableau</span>
         <span>Excel</span>
@@ -203,23 +170,25 @@
         <span>Google Ads</span>
         <span>Power Query</span>
       </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <span class="footer-name">William Guenther</span>
-        <span class="footer-subtitle">
-          Business Analytics · Marketing Analytics
-        </span>
-      </div>
-      <div class="footer-right">
-        <a href="mailto:YOUR_EMAIL@gmail.com">Email ↗</a>
-        <a href="#" target="_blank">LinkedIn ↗</a>
-        <a href="#" target="_blank">GitHub ↗</a>
-      </div>
     </div>
-  </footer>
-  <script src="script.js"></script>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div>
+      <span class="footer__name">William Guenther</span>
+      <span class="footer__sub">Business Analytics · Marketing Analytics</span>
+    </div>
+    <div class="footer__links">
+      <a href="mailto:YOUR_EMAIL@gmail.com">Email ↗</a>
+      <a href="#" target="_blank">LinkedIn ↗</a>
+      <a href="#" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

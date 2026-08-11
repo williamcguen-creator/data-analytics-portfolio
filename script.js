@@ -1,51 +1,59 @@
+/* ===== CUSTOM CURSOR ===== */
 const dot = document.querySelector(".cursor-dot");
-const circle = document.querySelector(".cursor-circle");
+const ring = document.querySelector(".cursor-ring");
 
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let circleX = mouseX;
-let circleY = mouseY;
+if (dot && ring && matchMedia("(pointer: fine)").matches) {
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX = mouseX;
+  let ringY = mouseY;
 
-document.addEventListener("mousemove", e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
-  if (dot) {
+  document.addEventListener("mousemove", e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     dot.style.left = `${mouseX}px`;
     dot.style.top = `${mouseY}px`;
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+    requestAnimationFrame(animateRing);
   }
-});
+  animateRing();
 
-function animateCursor() {
-  const speed = 0.13;
-
-  circleX += (mouseX - circleX) * speed;
-  circleY += (mouseY - circleY) * speed;
-
-  if (circle) {
-    circle.style.left = `${circleX}px`;
-    circle.style.top = `${circleY}px`;
-  }
-
-  requestAnimationFrame(animateCursor);
+  document.querySelectorAll(".interactive, a, button").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      ring.style.width = "52px";
+      ring.style.height = "52px";
+      ring.style.borderColor = "rgba(232,118,63,.8)";
+    });
+    el.addEventListener("mouseleave", () => {
+      ring.style.width = "38px";
+      ring.style.height = "38px";
+      ring.style.borderColor = "rgba(232,118,63,.45)";
+    });
+  });
 }
 
-animateCursor();
+/* ===== MOBILE NAV TOGGLE ===== */
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-document.querySelectorAll("a, button").forEach(element => {
-  element.addEventListener("mouseenter", () => {
-    if (circle) {
-      circle.style.width = "54px";
-      circle.style.height = "54px";
-      circle.style.borderColor = "rgba(232,107,61,.8)";
-    }
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("is-open");
+    navToggle.classList.toggle("is-open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen);
   });
 
-  element.addEventListener("mouseleave", () => {
-    if (circle) {
-      circle.style.width = "40px";
-      circle.style.height = "40px";
-      circle.style.borderColor = "rgba(232,107,61,.45)";
-    }
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("is-open");
+      navToggle.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
   });
-});
+}
