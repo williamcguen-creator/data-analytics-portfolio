@@ -28,12 +28,12 @@ if (dot && ring && matchMedia("(pointer: fine)").matches) {
     el.addEventListener("mouseenter", () => {
       ring.style.width = "52px";
       ring.style.height = "52px";
-      ring.style.borderColor = "rgba(232,118,63,.8)";
+      ring.style.borderColor = "rgba(217,164,65,.85)";
     });
     el.addEventListener("mouseleave", () => {
       ring.style.width = "38px";
       ring.style.height = "38px";
-      ring.style.borderColor = "rgba(232,118,63,.45)";
+      ring.style.borderColor = "rgba(255,255,255,.5)";
     });
   });
 }
