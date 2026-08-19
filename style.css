@@ -514,6 +514,7 @@ ul{list-style:none}
 
 .screenshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .screenshot-grid--2{grid-template-columns:repeat(2,1fr)}
+.screenshot-grid--1{grid-template-columns:1fr;max-width:560px}
 .screenshot-frame{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-raised)}
 .screenshot-frame__ph{
   display:flex;
@@ -534,6 +535,7 @@ ul{list-style:none}
   color:var(--text-soft);
   border-top:1px solid var(--line);
 }
+.screenshot-frame img{width:100%;display:block}
 
 .outcome-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .outcome-stat{
