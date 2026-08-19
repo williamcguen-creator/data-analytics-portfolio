@@ -64,8 +64,8 @@
         <h3 class="case-block__label">The challenge</h3>
         <p class="case-block__text">
           The business's website let prospective customers request a free quote or call directly, but
-          neither of those actions was being captured as measurable lead activity in GA4 — there was
-          no way to know how many leads were coming in, or through which channel.
+          neither action was being captured as measurable lead activity in GA4 — limiting visibility
+          into how website traffic and marketing channels contributed to lead generation.
         </p>
         <h3 class="case-block__label" style="margin-top:28px">The goal</h3>
         <p class="case-block__text">
@@ -102,21 +102,23 @@
     <div class="container">
       <p class="eyebrow reveal">03 — Implementation</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Configured separate GTM triggers for successful form submissions and phone-link clicks, both
-        feeding into a consistent GA4 lead measurement structure.
+        Configured separate GTM triggers for successful form submissions and phone-link clicks. The
+        phone trigger fires on any <code>Click URL</code> starting with <code>tel:</code> — a generic
+        match rather than one hardcoded number, so it works regardless of which phone number appears
+        on the page. Both triggers feed into a consistent GA4 lead measurement structure.
       </p>
       <div class="screenshot-grid reveal">
         <figure class="screenshot-frame">
-          <div class="screenshot-frame__ph">[ Screenshot — GA4 "Generate Lead – Free Quote Form" tag ]</div>
+          <img src="GA4 GTM Lead Tracking/free-quote-tag.png" alt="GA4 Generate Lead Free Quote Form tag configuration showing lead_type parameter set to free_quote_form">
           <figcaption>Form-submission tag configuration</figcaption>
         </figure>
         <figure class="screenshot-frame">
-          <div class="screenshot-frame__ph">[ Screenshot — Click trigger, Click URL starts with tel:+1XXXXXXXXXX ]</div>
+          <img src="GA4 GTM Lead Tracking/phone-call-trigger.png" alt="GTM Phone Call - Link Call trigger, Click URL starts with tel:">
           <figcaption>Phone-call click trigger</figcaption>
         </figure>
         <figure class="screenshot-frame">
-          <div class="screenshot-frame__ph">[ Screenshot — Tag Assistant, "GA4 – Generate Lead – Phone Call: Succeeded" ]</div>
-          <figcaption>Tag Assistant validation</figcaption>
+          <img src="GA4 GTM Lead Tracking/tag-assistant-summary.png" alt="Tag Assistant summary showing all three tags fired successfully">
+          <figcaption>Tag Assistant validation — all tags fired</figcaption>
         </figure>
       </div>
     </div>
@@ -124,21 +126,17 @@
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">04 — Validation &amp; reporting</p>
+      <p class="eyebrow reveal">04 — Validation</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         GA4 DebugView confirmed the <code>lead_type</code> parameter successfully traveled from the
-        website through GTM into GA4. The parameter was then registered as an event-scoped custom
-        dimension, and <code>generate_lead</code> was marked as a key event — connecting the technical
-        setup to actual marketing reporting.
+        website through GTM into GA4 for both lead methods. The parameter was then registered as an
+        event-scoped custom dimension, and <code>generate_lead</code> was marked as a key event —
+        connecting the technical setup to actual marketing reporting.
       </p>
-      <div class="screenshot-grid screenshot-grid--2 reveal">
+      <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
-          <div class="screenshot-frame__ph">[ Screenshot — GA4 DebugView: generate_lead → lead_type → phone_call ]</div>
-          <figcaption>DebugView confirming event + parameter</figcaption>
-        </figure>
-        <figure class="screenshot-frame">
-          <div class="screenshot-frame__ph">[ Screenshot — GA4 Traffic Acquisition report with lead_type dimension ]</div>
-          <figcaption>Traffic acquisition, by lead type</figcaption>
+          <img src="GA4 GTM Lead Tracking/debugview.png" alt="GA4 DebugView showing generate_lead events with lead_type values phone_call and free_quote_form">
+          <figcaption>DebugView — both lead types confirmed</figcaption>
         </figure>
       </div>
     </div>
