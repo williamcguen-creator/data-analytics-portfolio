@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GA4 & GTM Lead Tracking | William Guenther</title>
+<meta name="description" content="Case study: building an end-to-end lead measurement system with GA4 and Google Tag Manager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html">william<span>.</span>guenther</a>
+
+    <nav class="nav__links" id="navLinks">
+      <a class="nav__link" href="index.html">About</a>
+      <a class="nav__link is-active" href="projects.html">Projects</a>
+      <a class="nav__link" href="work.html">Work</a>
+      <a class="nav__link" href="education.html">Education</a>
+      <a class="nav__link nav__link--mobile-only" href="resume.pdf" target="_blank">Résumé ↗</a>
+      <a class="nav__link nav__link--mobile-only" href="mailto:williamcguen@gmail.com">Get in touch</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__resume" href="resume.pdf" target="_blank">Résumé ↗</a>
+      <a class="btn-outline" href="mailto:williamcguen@gmail.com">Get in touch</a>
+    </div>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="case-hero">
+    <div class="container">
+      <a href="projects.html" class="btn-text interactive case-hero__back">← All projects</a>
+      <p class="eyebrow reveal">Case study</p>
+      <h1 class="section__title reveal">GA4 &amp; GTM Lead Tracking<br>Implementation</h1>
+      <p class="section__lead reveal">
+        Building an end-to-end measurement system for a local service business.
+      </p>
+      <div class="case-hero__meta reveal">
+        <div><span>Client</span>Local service business</div>
+        <div><span>Role</span>Marketing analytics</div>
+        <div><span>Tools</span>GA4 · Google Tag Manager · Tag Assistant</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container case-section__grid">
+      <p class="eyebrow reveal">01 — Overview</p>
+      <div class="reveal">
+        <h3 class="case-block__label">The challenge</h3>
+        <p class="case-block__text">
+          The business's website let prospective customers request a free quote or call directly, but
+          neither of those actions was being captured as measurable lead activity in GA4 — there was
+          no way to know how many leads were coming in, or through which channel.
+        </p>
+        <h3 class="case-block__label" style="margin-top:28px">The goal</h3>
+        <p class="case-block__text">
+          Build a measurement system that could answer one question: how are users generating leads,
+          and which marketing channels are driving those leads?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container">
+      <p class="eyebrow reveal">02 — Measurement strategy</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        Both conversion actions were sent through GA4's <code>generate_lead</code> event, with a
+        <code>lead_type</code> parameter used to distinguish how each lead was generated — without
+        needing a separate event for every lead method.
+      </p>
+      <div class="table-wrap reveal">
+        <table class="measure-table">
+          <thead>
+            <tr><th>Interaction</th><th>GA4 event</th><th>Parameter</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Free quote submitted</td><td><code>generate_lead</code></td><td><code>lead_type</code></td><td><code>free_quote_form</code></td></tr>
+            <tr><td>Phone number clicked</td><td><code>generate_lead</code></td><td><code>lead_type</code></td><td><code>phone_call</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container">
+      <p class="eyebrow reveal">03 — Implementation</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        Configured separate GTM triggers for successful form submissions and phone-link clicks, both
+        feeding into a consistent GA4 lead measurement structure.
+      </p>
+      <div class="screenshot-grid reveal">
+        <figure class="screenshot-frame">
+          <div class="screenshot-frame__ph">[ Screenshot — GA4 "Generate Lead – Free Quote Form" tag ]</div>
+          <figcaption>Form-submission tag configuration</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <div class="screenshot-frame__ph">[ Screenshot — Click trigger, Click URL starts with tel:+1XXXXXXXXXX ]</div>
+          <figcaption>Phone-call click trigger</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <div class="screenshot-frame__ph">[ Screenshot — Tag Assistant, "GA4 – Generate Lead – Phone Call: Succeeded" ]</div>
+          <figcaption>Tag Assistant validation</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container">
+      <p class="eyebrow reveal">04 — Validation &amp; reporting</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        GA4 DebugView confirmed the <code>lead_type</code> parameter successfully traveled from the
+        website through GTM into GA4. The parameter was then registered as an event-scoped custom
+        dimension, and <code>generate_lead</code> was marked as a key event — connecting the technical
+        setup to actual marketing reporting.
+      </p>
+      <div class="screenshot-grid screenshot-grid--2 reveal">
+        <figure class="screenshot-frame">
+          <div class="screenshot-frame__ph">[ Screenshot — GA4 DebugView: generate_lead → lead_type → phone_call ]</div>
+          <figcaption>DebugView confirming event + parameter</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <div class="screenshot-frame__ph">[ Screenshot — GA4 Traffic Acquisition report with lead_type dimension ]</div>
+          <figcaption>Traffic acquisition, by lead type</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section--outcome">
+    <div class="container">
+      <p class="eyebrow reveal">05 — Outcome</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:32px">
+        Created an end-to-end lead measurement framework that captures the site's primary conversion
+        actions and enables future analysis of lead generation by traffic source and lead type.
+      </p>
+      <div class="outcome-stats reveal">
+        <div class="outcome-stat"><strong>2</strong><span>Lead methods tracked</span></div>
+        <div class="outcome-stat"><strong>1</strong><span>Unified lead event</span></div>
+        <div class="outcome-stat"><strong class="accent">GA4 + GTM</strong><span>End-to-end implementation</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div>
+      <span class="footer__name">William Guenther</span>
+      <span class="footer__sub">Business Analytics · Marketing Analytics</span>
+    </div>
+    <div class="footer__links">
+      <a href="mailto:williamcguen@gmail.com">Email ↗</a>
+      <a href="https://www.linkedin.com/in/william-guenther" target="_blank">LinkedIn ↗</a>
+      <a href="#" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
