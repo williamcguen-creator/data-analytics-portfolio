@@ -179,7 +179,7 @@ ul{list-style:none}
   align-items:center;
   gap:10px;
   padding:13px 20px;
-  border:1px solid #8a6a2a;
+  border:1px solid #8a3a34;
   border-radius:6px;
   font-family:var(--font-mono);
   font-size:13px;
@@ -276,7 +276,7 @@ ul{list-style:none}
 .chart-bars span{
   flex:1;
   height:var(--h);
-  background:linear-gradient(180deg,rgba(232,118,63,.5),rgba(232,118,63,.08));
+  background:linear-gradient(180deg,rgba(226,87,76,.5),rgba(226,87,76,.08));
   border-radius:3px 3px 0 0;
   transform:scaleY(0);
   transform-origin:bottom;
@@ -425,6 +425,128 @@ ul{list-style:none}
 }
 .project-row__visual img{width:100%;height:100%;object-fit:cover;display:block}
 
+.project-row__visual--soon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:220px;
+  padding:24px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.project-row--soon .project-row__title{color:var(--text-soft)}
+
+.status-pill{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:6px 14px;
+  width:fit-content;
+}
+
+/* ===== CASE STUDY PAGE ===== */
+.case-hero{padding:60px 0 70px}
+.case-hero__back{display:inline-block;margin-bottom:28px}
+
+.case-hero__meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:36px;
+  margin-top:36px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.case-hero__meta div{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--text-soft)}
+.case-hero__meta span{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.case-section{border-top:1px solid var(--line);padding:64px 0}
+.case-section--outcome{padding-bottom:90px}
+
+.case-section__grid{display:grid;grid-template-columns:220px 1fr;gap:40px}
+
+.case-block__label{font-family:var(--font-display);font-size:18px;font-weight:600;margin-bottom:10px}
+.case-block__text{color:var(--text-soft);font-size:15px;line-height:1.85}
+.case-block__text code{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--accent);
+  background:var(--bg-raised);
+  padding:2px 6px;
+  border-radius:4px;
+}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.measure-table{width:100%;border-collapse:collapse;min-width:520px}
+.measure-table th{
+  text-align:left;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:14px 18px;
+  background:var(--bg-raised);
+  border-bottom:1px solid var(--line);
+}
+.measure-table td{
+  padding:14px 18px;
+  font-size:14px;
+  color:var(--text-soft);
+  border-bottom:1px solid var(--line);
+}
+.measure-table tr:last-child td{border-bottom:none}
+.measure-table code{font-family:var(--font-mono);font-size:12.5px;color:var(--accent)}
+
+.screenshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.screenshot-grid--2{grid-template-columns:repeat(2,1fr)}
+.screenshot-frame{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-raised)}
+.screenshot-frame__ph{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:180px;
+  padding:20px;
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.screenshot-frame figcaption{
+  padding:12px 16px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-soft);
+  border-top:1px solid var(--line);
+}
+
+.outcome-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.outcome-stat{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:26px 22px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.outcome-stat strong{font-family:var(--font-display);font-size:26px;font-weight:600}
+.outcome-stat span{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+
 /* ===== WORK PAGE ===== */
 .work-hero{padding:80px 0 60px}
 
@@ -535,6 +657,10 @@ ul{list-style:none}
   .project-row--reverse .project-row__visual{order:0}
   .timeline-item{grid-template-columns:1fr;gap:14px}
   .grad-grid{grid-template-columns:1fr}
+  .case-section__grid{grid-template-columns:1fr}
+  .screenshot-grid,.screenshot-grid--2{grid-template-columns:1fr}
+  .outcome-stats{grid-template-columns:1fr}
+  .case-hero__meta{gap:22px}
 }
 
 @media(max-width:760px){
