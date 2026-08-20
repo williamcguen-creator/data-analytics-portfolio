@@ -64,7 +64,7 @@
         <h3 class="case-block__label">The challenge</h3>
         <p class="case-block__text">
           The business's website let prospective customers request a free quote or call directly, but
-          neither action was being captured as measurable lead activity in GA4 — limiting visibility
+          neither action was being captured as measurable lead activity in GA4. That limited visibility
           into how website traffic and marketing channels contributed to lead generation.
         </p>
         <h3 class="case-block__label" style="margin-top:28px">The goal</h3>
@@ -81,7 +81,7 @@
       <p class="eyebrow reveal">02 — Measurement strategy</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         Both conversion actions were sent through GA4's <code>generate_lead</code> event, with a
-        <code>lead_type</code> parameter used to distinguish how each lead was generated — without
+        <code>lead_type</code> parameter used to distinguish how each lead was generated. This avoided
         needing a separate event for every lead method.
       </p>
       <div class="table-wrap reveal">
@@ -103,7 +103,7 @@
       <p class="eyebrow reveal">03 — Implementation</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         Configured separate GTM triggers for successful form submissions and phone-link clicks. The
-        phone trigger fires on any <code>Click URL</code> starting with <code>tel:</code> — a generic
+        phone trigger fires on any <code>Click URL</code> starting with <code>tel:</code>, a generic
         match rather than one hardcoded number, so it works regardless of which phone number appears
         on the page. Both triggers feed into a consistent GA4 lead measurement structure.
       </p>
@@ -130,7 +130,7 @@
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         GA4 DebugView confirmed the <code>lead_type</code> parameter successfully traveled from the
         website through GTM into GA4 for both lead methods. The parameter was then registered as an
-        event-scoped custom dimension, and <code>generate_lead</code> was marked as a key event —
+        event-scoped custom dimension, and <code>generate_lead</code> was marked as a key event,
         connecting the technical setup to actual marketing reporting.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
@@ -145,15 +145,10 @@
   <section class="case-section case-section--outcome">
     <div class="container">
       <p class="eyebrow reveal">05 — Outcome</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:32px">
-        Created an end-to-end lead measurement framework that captures the site's primary conversion
-        actions and enables future analysis of lead generation by traffic source and lead type.
+      <p class="case-block__text reveal" style="max-width:640px">
+        This project created an end-to-end lead measurement framework that captures the site's primary
+        conversion actions and enables future analysis of lead generation by traffic source and lead type.
       </p>
-      <div class="outcome-stats reveal">
-        <div class="outcome-stat"><strong>2</strong><span>Lead methods tracked</span></div>
-        <div class="outcome-stat"><strong>1</strong><span>Unified lead event</span></div>
-        <div class="outcome-stat"><strong class="accent">GA4 + GTM</strong><span>End-to-end implementation</span></div>
-      </div>
     </div>
   </section>
 
