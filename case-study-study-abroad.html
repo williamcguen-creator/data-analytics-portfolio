@@ -105,7 +105,13 @@
       profiles, advising content focused on academic planning and elective sequencing, and a
       basic administration process for adding and updating profiles going forward.
     </p>
-    <p class="case-block__text reveal" style="max-width:640px">
+    <div class="screenshot-grid screenshot-grid--1 reveal" style="margin-bottom:28px">
+      <figure class="screenshot-frame">
+        <img src="Study Abroad Process Improvement/charter.png" alt="Project Charter for the QU Study Abroad Internal Website, showing organization, overview, justification, and objectives">
+        <figcaption>Project Charter</figcaption>
+      </figure>
+    </div>
+    <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
       Scope exclusions were set deliberately narrow for this phase: no application or
       processing functionality (students still apply through existing channels), no real-time
       chat or 24/7 support, and no new scholarship or payment system. Key constraints carried
@@ -113,6 +119,12 @@
       accessibility expectations, and FERPA and consent requirements for publishing any
       student story, photo, or contact information.
     </p>
+    <div class="screenshot-grid screenshot-grid--1 reveal">
+      <figure class="screenshot-frame">
+        <img src="Study Abroad Process Improvement/scope-statement.png" alt="Scope Statement detailing deliverables, acceptance criteria, exclusions, assumptions, and constraints for the QU Study Abroad Internal Website">
+        <figcaption>Scope Statement</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -124,12 +136,12 @@
       Profiles, Marketing &amp; Branding, Advising &amp; Budget Information, and IT &amp; Security,
       each broken down to a third level of assignable tasks (for example, Website Development
       splits into Design, Build, Testing, Launch, and Maintenance &amp; Training, with each of
-      those further decomposed into specific working tasks).
+      those further decomposed into specific working tasks, numbered down to the 1.1.1 level).
     </p>
     <div class="screenshot-grid screenshot-grid--1 reveal">
       <figure class="screenshot-frame">
-        <img src="Study Abroad Process Improvement/wbs.png" alt="Work breakdown structure diagram showing the Study Abroad Website decomposed into Website Development, Student Profiles, Branding, Advising Content, and Compliance">
-        <figcaption>Work breakdown structure, from the final plan pitch</figcaption>
+        <img src="Study Abroad Process Improvement/wbs-table.png" alt="Full Work Breakdown Structure numbered to the third level, covering Website Development, Student Profiles, Marketing and Branding, Advising and Budget Information, and IT and Security">
+        <figcaption>Work breakdown structure, numbered to the third level</figcaption>
       </figure>
     </div>
   </div>
@@ -139,20 +151,15 @@
   <div class="container">
     <p class="eyebrow reveal">04 — Schedule &amp; dependencies</p>
     <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-      The plan is sequenced across a 25-day window (April 14 to May 8), moving through five
-      phases: Design, Build, Content, Review, and Launch. Task dependencies were mapped
-      explicitly rather than left implicit: UI must be finalized before development starts,
-      student stories need to be collected before branding and styling can proceed, and FERPA
-      sign-off is a hard prerequisite for go-live.
+      The plan is sequenced across a 25-day window (April 14 to May 8) at the individual task
+      level, with a start date, end date, and predecessor mapped for every WBS item. UI has to
+      be finalized before development starts, student consent has to be collected before
+      profile content is built, and FERPA compliance review is a hard prerequisite for launch.
     </p>
-    <div class="screenshot-grid screenshot-grid--2 reveal">
+    <div class="screenshot-grid screenshot-grid--1 reveal">
       <figure class="screenshot-frame">
-        <img src="Study Abroad Process Improvement/schedule.png" alt="Five-phase project schedule from April 14 to May 8: Design, Build, Content, Review, Launch">
-        <figcaption>Schedule, Design through Launch</figcaption>
-      </figure>
-      <figure class="screenshot-frame">
-        <img src="Study Abroad Process Improvement/task-dependencies.png" alt="Task dependency diagram: Design before Development, Content before Branding, Compliance Review before Launch">
-        <figcaption>Task dependencies and workflow</figcaption>
+        <img src="Study Abroad Process Improvement/schedule-table.png" alt="Task-level project schedule with WBS number, task name, duration, start date, end date, and predecessor for every task from April 14 to May 8">
+        <figcaption>Schedule, by task, with start dates, end dates, and predecessors</figcaption>
       </figure>
     </div>
   </div>
@@ -164,15 +171,15 @@
     <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
       Five stakeholder groups touch the project: the Project Manager, the Study Abroad Office,
       the IT Department, Marketing, and the students themselves (as both content contributors
-      and end users). The RACI matrix assigns responsibility and accountability down to the
-      individual task level so that approval and execution don't bottleneck on any single
-      group, IT owns build and deployment tasks, the Study Abroad Office owns advising content
-      and compliance sign-off, and Marketing is consulted on branding and outreach.
+      and end users). The RACI matrix assigns a role on every task rather than just the work
+      package level, IT is Responsible for build and deployment tasks, the Study Abroad Office
+      is Responsible for advising content and student outreach, Marketing is Responsible for
+      branding tasks and Consulted elsewhere, and the Project Manager is Accountable throughout.
     </p>
     <div class="screenshot-grid screenshot-grid--1 reveal">
       <figure class="screenshot-frame">
-        <img src="Study Abroad Process Improvement/raci-matrix.png" alt="RACI matrix listing Project Manager, Study Abroad Director, IT Department, and Marketing with Responsible, Accountable, and Consulted roles">
-        <figcaption>RACI matrix, from the final plan pitch</figcaption>
+        <img src="Study Abroad Process Improvement/raci-table.png" alt="Task-level RACI matrix assigning Responsible, Accountable, Consulted, or Informed to the Project Manager, Study Abroad Office, IT Department, Marketing Team, and Students for every WBS task">
+        <figcaption>RACI matrix, by task</figcaption>
       </figure>
     </div>
   </div>
@@ -183,25 +190,28 @@
     <p class="eyebrow reveal">06 — Budget &amp; risk management</p>
     <p class="case-block__text reveal" style="max-width:640px;margin-bottom:20px">
       The rough-order-of-magnitude budget estimate totals $11,450, built bottom-up from
-      hours and a blended rate against each WBS work package (website build, testing, launch
-      support, student profile content collection, marketing review, advising content, FERPA
-      and privacy review, and software/hosting), plus a 10% management reserve.
+      hours and a blended rate against each WBS work package (website design, build, testing,
+      launch, and maintenance; student profile content collection; marketing review; advising
+      content; FERPA and privacy compliance review; and software/CMS/hosting), plus a 10%
+      management reserve.
     </p>
-    <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-      The risk register carries seven identified risks scored by likelihood and impact. The
-      highest-scored risks are website build delays from technical issues or limited IT
-      support, no clear ownership for keeping the site updated after launch, and lower than
-      expected student consent and profile participation, each paired with a named owner and
-      a mitigation response rather than left as an open concern.
-    </p>
-    <div class="screenshot-grid screenshot-grid--2 reveal">
+    <div class="screenshot-grid screenshot-grid--1 reveal" style="margin-bottom:28px">
       <figure class="screenshot-frame">
-        <img src="Study Abroad Process Improvement/budget.png" alt="Budget breakdown totaling $11,450 across website development, content, testing, software and hosting, and contingency">
-        <figcaption>Budget estimate</figcaption>
+        <img src="Study Abroad Process Improvement/budget-table.png" alt="Budget table with WBS number, task, resource, hours, rate, and total, totaling $11,450 including a 10% contingency reserve">
+        <figcaption>Budget estimate, by task and resource</figcaption>
       </figure>
+    </div>
+    <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+      The risk register carries seven identified risks, each scored on a likelihood and
+      consequence scale, and each paired with a named owner and a specific mitigation response
+      rather than left as an open concern. The highest-scored risks are website build delays
+      from technical issues or limited IT support, no clear ownership for keeping the site
+      updated after launch, and lower than expected student consent and profile participation.
+    </p>
+    <div class="screenshot-grid screenshot-grid--1 reveal">
       <figure class="screenshot-frame">
-        <img src="Study Abroad Process Improvement/risks-mitigation.png" alt="Risk register table listing risk level and mitigation strategy for student participation, technical delays, FERPA and privacy, and stakeholder approval">
-        <figcaption>Risk register and mitigation strategy</figcaption>
+        <img src="Study Abroad Process Improvement/risk-register.png" alt="Risk register with likelihood, consequence, risk score, response, owner, and mitigation for seven identified risks">
+        <figcaption>Risk register, with owners and mitigation strategy</figcaption>
       </figure>
     </div>
   </div>
