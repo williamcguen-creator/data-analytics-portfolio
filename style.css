@@ -198,7 +198,11 @@ ul{list-style:none}
 }
 .btn-text:hover{color:var(--accent)}
 
-/* ===== HERO VISUAL / SAMPLE DASHBOARD ===== */
+/* ===== HERO VISUAL / PORTRAIT ===== */
+.hero__portrait{aspect-ratio:4/5;max-width:380px;margin-left:auto}
+.hero__portrait img{width:100%;height:100%;object-fit:cover}
+
+/* ===== (unused) SAMPLE DASHBOARD CARD, no page currently references these classes ===== */
 .visual-card{
   background:var(--bg-raised);
   border:1px solid var(--line);
