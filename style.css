@@ -627,6 +627,38 @@ ul{list-style:none}
 }
 .grad-card .btn-text{margin-top:auto}
 
+/* ===== CONTACT PAGE CHART TOY (decorative, no data) ===== */
+.chart-toy{
+  aspect-ratio:4/5;
+  max-width:380px;
+  margin-left:auto;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:14px;
+  padding:32px 28px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--bg-raised);
+}
+.chart-toy__bar{
+  width:34px;
+  border-radius:6px 6px 0 0;
+  background:var(--line);
+  transform-origin:bottom;
+  transition:background .3s ease, transform .3s ease;
+  animation:chart-idle 3.6s ease-in-out infinite;
+}
+.chart-toy__bar:hover{
+  animation-play-state:paused;
+  background:var(--accent);
+  transform:scaleY(1.15);
+}
+@keyframes chart-idle{
+  0%,100%{transform:scaleY(1)}
+  50%{transform:scaleY(1.04)}
+}
+
 /* ===== CUSTOM CURSOR ===== */
 .cursor-dot,.cursor-ring{
   position:fixed;
