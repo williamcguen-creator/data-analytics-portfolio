@@ -710,6 +710,29 @@ ul{list-style:none}
   50%{transform:scaleY(1.04)}
 }
 
+/* ===== CONTACT PAGE DOODLE (decorative, no data) ===== */
+.contact-doodle{margin-top:40px}
+.contact-doodle svg{overflow:visible}
+.contact-doodle__plane{
+  transform-origin:center;
+  animation:doodle-plane-float 3.4s ease-in-out infinite;
+}
+.contact-doodle__dot{
+  transform-origin:center;
+  animation:doodle-dot-float 2.8s ease-in-out infinite;
+}
+.contact-doodle__dot--2{animation-delay:.5s}
+.contact-doodle__dot--3{animation-delay:1s}
+.contact-doodle__dot--4{animation-delay:1.5s}
+@keyframes doodle-plane-float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-9px) rotate(-3deg)}
+}
+@keyframes doodle-dot-float{
+  0%,100%{transform:translateY(0);opacity:.9}
+  50%{transform:translateY(-12px);opacity:.35}
+}
+
 /* ===== CUSTOM CURSOR ===== */
 .cursor-dot,.cursor-ring{
   position:fixed;
