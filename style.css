@@ -638,9 +638,10 @@ ul{list-style:none}
   justify-content:center;
   gap:16px;
   padding:36px 32px 40px;
-  border:1px solid var(--line);
+  border:1px solid rgba(0,0,0,.06);
   border-radius:16px;
-  background:linear-gradient(180deg, var(--bg-raised) 0%, var(--bg) 100%);
+  background:#f5f4f2;
+  box-shadow:0 30px 70px rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.03);
   overflow:hidden;
 }
 .chart-toy::before{
@@ -650,14 +651,50 @@ ul{list-style:none}
   right:32px;
   bottom:40px;
   height:1px;
-  background:var(--line);
+  background:rgba(11,13,14,.14);
+}
+.chart-toy__line{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+.chart-toy__line polyline{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:7 7;
+  animation:chart-line-flow 1s linear infinite;
+  filter:drop-shadow(0 2px 6px rgba(226,87,76,.5));
+}
+.chart-toy__line circle{
+  fill:var(--accent);
+  animation:chart-dot-pulse 2s ease-in-out infinite;
+}
+.chart-toy__line circle:nth-child(3){animation-delay:.3s}
+.chart-toy__line circle:nth-child(4){animation-delay:.6s}
+.chart-toy__line circle:nth-child(5){animation-delay:.9s}
+.chart-toy__line circle:nth-child(6){animation-delay:1.2s}
+.chart-toy__line circle:nth-child(7){animation-delay:1.5s}
+.chart-toy__line circle:nth-child(8){animation-delay:1.8s}
+@keyframes chart-line-flow{
+  to{stroke-dashoffset:-28}
+}
+@keyframes chart-dot-pulse{
+  0%,100%{r:4.5;opacity:1}
+  50%{r:6.5;opacity:.65}
 }
 .chart-toy__bar{
   position:relative;
+  z-index:1;
   width:30px;
   border-radius:8px 8px 3px 3px;
-  background:linear-gradient(180deg, var(--line) 0%, rgba(35,39,42,.4) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  background:linear-gradient(180deg, #d7d6d3 0%, #c3c2be 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
   transform-origin:bottom;
   transition:background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
   animation:chart-idle 4.2s ease-in-out infinite;
