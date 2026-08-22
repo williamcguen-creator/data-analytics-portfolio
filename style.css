@@ -629,30 +629,44 @@ ul{list-style:none}
 
 /* ===== CONTACT PAGE CHART TOY (decorative, no data) ===== */
 .chart-toy{
-  aspect-ratio:4/5;
-  max-width:380px;
+  position:relative;
+  aspect-ratio:6/5;
+  max-width:420px;
   margin-left:auto;
   display:flex;
   align-items:flex-end;
   justify-content:center;
-  gap:14px;
-  padding:32px 28px;
+  gap:16px;
+  padding:36px 32px 40px;
   border:1px solid var(--line);
-  border-radius:14px;
-  background:var(--bg-raised);
+  border-radius:16px;
+  background:linear-gradient(180deg, var(--bg-raised) 0%, var(--bg) 100%);
+  overflow:hidden;
+}
+.chart-toy::before{
+  content:"";
+  position:absolute;
+  left:32px;
+  right:32px;
+  bottom:40px;
+  height:1px;
+  background:var(--line);
 }
 .chart-toy__bar{
-  width:34px;
-  border-radius:6px 6px 0 0;
-  background:var(--line);
+  position:relative;
+  width:30px;
+  border-radius:8px 8px 3px 3px;
+  background:linear-gradient(180deg, var(--line) 0%, rgba(35,39,42,.4) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
   transform-origin:bottom;
-  transition:background .3s ease, transform .3s ease;
-  animation:chart-idle 3.6s ease-in-out infinite;
+  transition:background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  animation:chart-idle 4.2s ease-in-out infinite;
 }
 .chart-toy__bar:hover{
   animation-play-state:paused;
-  background:var(--accent);
-  transform:scaleY(1.15);
+  background:linear-gradient(180deg, var(--accent) 0%, #a83a32 100%);
+  box-shadow:0 0 22px var(--accent-dim), inset 0 1px 0 rgba(255,255,255,.15);
+  transform:scaleY(1.1);
 }
 @keyframes chart-idle{
   0%,100%{transform:scaleY(1)}
