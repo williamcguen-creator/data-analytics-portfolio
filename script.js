@@ -28,7 +28,7 @@ if (dot && ring && matchMedia("(pointer: fine)").matches) {
     el.addEventListener("mouseenter", () => {
       ring.style.width = "52px";
       ring.style.height = "52px";
-      ring.style.borderColor = "rgba(217,164,65,.85)";
+      ring.style.borderColor = "rgba(226,87,76,.85)";
     });
     el.addEventListener("mouseleave", () => {
       ring.style.width = "38px";
