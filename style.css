@@ -632,6 +632,109 @@ ul{list-style:none}
 }
 .grad-card .btn-text{margin-top:auto}
 
+
+/* ===== CONTACT PAGE CHART TOY (decorative, no data) ===== */
+.chart-toy{
+  position:relative;
+  aspect-ratio:3/2;
+  max-width:420px;
+  margin-left:auto;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:16px;
+  padding:8px 20px 28px;
+  overflow:hidden;
+}
+.chart-toy::before{
+  content:"";
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:28px;
+  height:1px;
+  background:var(--line);
+}
+.chart-toy__line{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+.chart-toy__line polyline{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:7 7;
+  animation:chart-line-flow 1s linear infinite;
+  filter:drop-shadow(0 2px 6px rgba(226,87,76,.5));
+}
+.chart-toy__line circle{
+  fill:var(--accent);
+  animation:chart-dot-pulse 2s ease-in-out infinite;
+}
+.chart-toy__line circle:nth-child(3){animation-delay:.3s}
+.chart-toy__line circle:nth-child(4){animation-delay:.6s}
+.chart-toy__line circle:nth-child(5){animation-delay:.9s}
+.chart-toy__line circle:nth-child(6){animation-delay:1.2s}
+.chart-toy__line circle:nth-child(7){animation-delay:1.5s}
+.chart-toy__line circle:nth-child(8){animation-delay:1.8s}
+@keyframes chart-line-flow{
+  to{stroke-dashoffset:-28}
+}
+@keyframes chart-dot-pulse{
+  0%,100%{r:4.5;opacity:1}
+  50%{r:6.5;opacity:.65}
+}
+.chart-toy__bar{
+  position:relative;
+  z-index:1;
+  width:30px;
+  border-radius:8px 8px 3px 3px;
+  background:linear-gradient(180deg, #d7d6d3 0%, #c3c2be 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+  transform-origin:bottom;
+  transition:background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  animation:chart-idle 4.2s ease-in-out infinite;
+}
+.chart-toy__bar:hover{
+  animation-play-state:paused;
+  background:linear-gradient(180deg, var(--accent) 0%, #a83a32 100%);
+  box-shadow:0 0 22px var(--accent-dim), inset 0 1px 0 rgba(255,255,255,.15);
+  transform:scaleY(1.1);
+}
+@keyframes chart-idle{
+  0%,100%{transform:scaleY(1)}
+  50%{transform:scaleY(1.04)}
+}
+
+/* ===== CONTACT PAGE DOODLE (decorative, no data) ===== */
+.contact-doodle{margin-top:40px}
+.contact-doodle svg{overflow:visible}
+.contact-doodle__plane{
+  transform-origin:center;
+  animation:doodle-plane-float 3.4s ease-in-out infinite;
+}
+.contact-doodle__dot{
+  transform-origin:center;
+  animation:doodle-dot-float 2.8s ease-in-out infinite;
+}
+.contact-doodle__dot--2{animation-delay:.5s}
+.contact-doodle__dot--3{animation-delay:1s}
+.contact-doodle__dot--4{animation-delay:1.5s}
+@keyframes doodle-plane-float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-9px) rotate(-3deg)}
+}
+@keyframes doodle-dot-float{
+  0%,100%{transform:translateY(0);opacity:.9}
+  50%{transform:translateY(-12px);opacity:.35}
+}
+
 /* ===== CUSTOM CURSOR ===== */
 .cursor-dot,.cursor-ring{
   position:fixed;
