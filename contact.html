@@ -28,10 +28,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="site-header">
   <div class="container nav">
-    <a class="nav__logo" href="/">william<span>.</span>guenther</a>
+    <a class="nav__logo" href="index.html">william<span>.</span>guenther</a>
 
     <nav class="nav__links" id="navLinks">
-      <a class="nav__link" href="/">About</a>
+      <a class="nav__link" href="index.html">About</a>
       <a class="nav__link" href="projects.html">Projects</a>
       <a class="nav__link" href="work.html">Work</a>
       <a class="nav__link" href="education.html">Education</a>
@@ -53,22 +53,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 
 <section class="case-hero" style="padding-bottom:60px">
-  <div class="container">
-    <p class="eyebrow reveal">Contact</p>
-    <h1 class="section__title reveal">Let's get in touch.</h1>
-    <p class="section__lead reveal" style="margin-bottom:40px">
-      Open to new-grad roles in business analytics and marketing analytics. The fastest way
-      to reach me is right here.
-    </p>
+  <div class="container hero__grid">
 
-    <div class="reveal" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
-      <a class="btn-primary interactive" href="mailto:williamcguen@gmail.com" style="font-size:15px;padding:16px 22px">
-        ✉ williamcguen@gmail.com
-      </a>
-      <a class="btn-text interactive" href="https://www.linkedin.com/in/william-guenther" target="_blank" style="font-size:15px">
-        LinkedIn ↗
-      </a>
+    <div>
+      <p class="eyebrow reveal">Contact</p>
+      <h1 class="section__title reveal" style="color:var(--accent)">Let's get in touch.</h1>
+      <p class="section__lead reveal" style="margin-bottom:40px">
+        The fastest way to reach me is right here.
+      </p>
+
+      <div class="reveal" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+        <a class="btn-primary interactive" href="mailto:williamcguen@gmail.com" style="font-size:15px;padding:16px 22px">
+          ✉ williamcguen@gmail.com
+        </a>
+        <a class="btn-text interactive" href="https://www.linkedin.com/in/william-guenther" target="_blank" style="font-size:15px">
+          LinkedIn ↗
+        </a>
+      </div>
+
+      <div class="contact-doodle reveal" aria-hidden="true">
+        <svg viewBox="0 0 160 140" width="130" height="114">
+          <g class="contact-doodle__plane">
+            <path d="M14 78 L146 30 L88 122 L70 82 L14 78Z" fill="var(--text)"></path>
+            <path d="M70 82 L146 30 L88 122Z" fill="var(--accent)"></path>
+          </g>
+          <circle class="contact-doodle__dot contact-doodle__dot--1" cx="24" cy="30" r="5" fill="#5CC8FF"></circle>
+          <circle class="contact-doodle__dot contact-doodle__dot--2" cx="140" cy="88" r="4" fill="#FFD166"></circle>
+          <circle class="contact-doodle__dot contact-doodle__dot--3" cx="52" cy="118" r="4" fill="#7CD992"></circle>
+          <circle class="contact-doodle__dot contact-doodle__dot--4" cx="116" cy="14" r="3.5" fill="#FF6F91"></circle>
+        </svg>
+      </div>
     </div>
+
+    <div class="hero__visual reveal">
+      <div class="chart-toy">
+        <svg class="chart-toy__line" viewBox="0 0 420 280" preserveAspectRatio="none">
+          <polyline points="72,187 118,137 164,167 210,107 256,152 302,122 348,177"></polyline>
+          <circle cx="72" cy="187" r="4.5"></circle>
+          <circle cx="118" cy="137" r="4.5"></circle>
+          <circle cx="164" cy="167" r="4.5"></circle>
+          <circle cx="210" cy="107" r="4.5"></circle>
+          <circle cx="256" cy="152" r="4.5"></circle>
+          <circle cx="302" cy="122" r="4.5"></circle>
+          <circle cx="348" cy="177" r="4.5"></circle>
+        </svg>
+        <span class="chart-toy__bar" style="height:65px;animation-delay:0s"></span>
+        <span class="chart-toy__bar" style="height:115px;animation-delay:.15s"></span>
+        <span class="chart-toy__bar" style="height:85px;animation-delay:.3s"></span>
+        <span class="chart-toy__bar" style="height:145px;animation-delay:.45s"></span>
+        <span class="chart-toy__bar" style="height:100px;animation-delay:.6s"></span>
+        <span class="chart-toy__bar" style="height:130px;animation-delay:.75s"></span>
+        <span class="chart-toy__bar" style="height:75px;animation-delay:.9s"></span>
+      </div>
+    </div>
+
   </div>
 </section>
 
