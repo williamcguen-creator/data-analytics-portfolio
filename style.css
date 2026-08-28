@@ -1,203 +1,787 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MF5KTT6L');</script>
-<!-- End Google Tag Manager -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Ads Search Campaign | William Guenther</title>
-<meta name="description" content="A case study on building a controlled, budget-conscious Google Ads Search campaign for a local plumbing business's water heater services.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF5KTT6L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+/* ===== RESET / BASE ===== */
+*{box-sizing:border-box;margin:0;padding:0}
 
-<div class="cursor-dot"></div>
+:root{
+  --bg:#0b0d0e;
+  --bg-raised:#131617;
+  --text:#ece8e0;
+  --text-soft:#c2beb6;
+  --muted:#84898c;
+  --line:#23272a;
+  --accent:#e2574c;
+  --accent-dim:rgba(226,87,76,.12);
+  --max:1160px;
+  --font-display:"Space Grotesk",sans-serif;
+  --font-body:"Inter",sans-serif;
+  --font-mono:"JetBrains Mono",monospace;
+}
 
-<header class="site-header">
-  <div class="container nav">
-    <a class="nav__logo" href="/">william<span>.</span>guenther</a>
+html{scroll-behavior:smooth}
 
-    <nav class="nav__links" id="navLinks">
-      <a class="nav__link" href="/">About</a>
-      <a class="nav__link is-active" href="projects.html">Projects</a>
-      <a class="nav__link" href="work.html">Work</a>
-      <a class="nav__link" href="education.html">Education</a>
-      <a class="nav__link nav__link--mobile-only" href="resume.html">Résumé</a>
-      <a class="nav__link nav__link--mobile-only" href="contact.html">Get in touch</a>
-    </nav>
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
 
-    <div class="nav__actions">
-      <a class="nav__resume" href="resume.html">Résumé</a>
-      <a class="btn-outline" href="contact.html">Get in touch</a>
-    </div>
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
 
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+.container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
 
-<main>
+.accent{color:var(--accent)}
 
-  <section class="case-hero">
-    <div class="container">
-      <a href="projects.html" class="btn-text interactive case-hero__back">← All projects</a>
-      <p class="eyebrow reveal">Case study</p>
-      <h1 class="section__title reveal">Google Ads Search Campaign</h1>
-      <p class="section__lead reveal">
-        Building a controlled, budget-conscious paid search strategy for a New Jersey plumbing
-        business's water heater services.
-      </p>
-      <div class="case-hero__meta reveal">
-        <div><span>Client</span>Local plumbing business</div>
-        <div><span>Role</span>Paid media strategy</div>
-        <div><span>Tools</span>Google Ads</div>
-        <div><span>Status</span>Paused before launch</div>
-      </div>
-    </div>
-  </section>
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:18px;
+}
 
-  <section class="case-section">
-    <div class="container case-section__grid">
-      <p class="eyebrow reveal">01 — Overview</p>
-      <div class="reveal">
-        <h3 class="case-block__label">The challenge</h3>
-        <p class="case-block__text">
-          The plumbing business had a working analytics foundation but no paid traffic actively driving
-          new leads. Water heater repair, replacement, and installation searches were identified as a
-          high-intent opportunity, since customers searching these terms are typically ready to act,
-          making them a strong fit for a first paid search test.
-        </p>
-        <h3 class="case-block__label" style="margin-top:28px">The goal</h3>
-        <p class="case-block__text">
-          Build a Google Ads Search campaign focused specifically on water heater service leads, using a
-          small, realistic budget rather than Google's default automated recommendations, and structure
-          it as a controlled initial test rather than an open-ended spend commitment.
-        </p>
-      </div>
-    </div>
-  </section>
+/* ===== HEADER / NAV ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(11,13,14,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
 
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">02 — Campaign strategy</p>
-      <p class="case-block__text reveal" style="max-width:640px">
-        A Search campaign was chosen over Performance Max. Search keeps keyword targeting, ad copy, and
-        placement under direct control, which matters most for a first, limited-budget test where the
-        goal is to learn from search intent rather than hand budget decisions to full automation.
-      </p>
-    </div>
-  </section>
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:76px;
+}
 
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">03 — Targeting strategy</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Keywords were built around water heater repair, replacement, and installation searches, along
-        with related plumber and service-call terms, to capture users with clear purchase intent.
-        Geographic targeting was limited to the business's actual service area rather than targeting
-        traffic indiscriminately.
-      </p>
-      <div class="screenshot-grid screenshot-grid--2 reveal">
-        <figure class="screenshot-frame">
-          <img src="Google Ads Search Campaign/search-keywords.png" alt="Google Ads Keywords report showing water heater repair, replacement, and installation search terms">
-          <figcaption>Keyword targeting</figcaption>
-        </figure>
-        <figure class="screenshot-frame">
-          <img src="Google Ads Search Campaign/location-targeting.png" alt="Google Ads Locations report showing campaign targeting limited to New Jersey service-area cities">
-          <figcaption>Service-area targeting</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+.nav__logo{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:500;
+}
+.nav__logo span{color:var(--accent)}
 
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">04 — Ad creation</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        A Responsive Search Ad was built with multiple headline and description variations covering
-        the core water heater services and a clear call to action, so Google can test combinations and
-        serve the strongest-performing version once the campaign is live.
-      </p>
-      <div class="screenshot-grid screenshot-grid--1 reveal" style="max-width:100%">
-        <figure class="screenshot-frame">
-          <img src="Google Ads Search Campaign/responsive-search-ad-preview.png" alt="Google Ads Responsive Search Ad headline assets, including water heater repair, installation, and replacement variations">
-          <figcaption>Responsive Search Ad headline assets</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+.nav__links{display:flex;align-items:center;gap:36px}
 
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">05 — Budget &amp; bidding</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Rather than following Google's higher automated budget recommendation, the campaign was set to
-        an average daily budget of $16.50 (approximately $500 per month) with a Maximize Conversions
-        bidding strategy, keeping the initial test financially realistic for a small local business.
-      </p>
-      <div class="screenshot-grid screenshot-grid--1 reveal">
-        <figure class="screenshot-frame">
-          <img src="Google Ads Search Campaign/budget-bidding.png" alt="Google Ads campaign settings showing Maximize Conversions bidding, a $16.50 daily budget, and Submit lead forms as the conversion goal">
-          <figcaption>Budget &amp; bidding configuration</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+.nav__link{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--muted);
+  transition:color .2s ease;
+}
+.nav__link:hover{color:var(--text)}
+.nav__link.is-active{color:var(--accent)}
 
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">06 — Measurement connection</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:20px">
-        This campaign was not built in isolation. Its conversion goal is set to lead-form submissions,
-        and it relies on the GA4 and Google Tag Manager implementation already in place for the same
-        business, which captures contact-form submissions and phone-number clicks as
-        <code>generate_lead</code> events. Once live, that existing measurement framework is what will
-        let this campaign's leads be evaluated.
-      </p>
-      <a href="case-study-ga4-lead-tracking.html" class="btn-text interactive reveal">See the related GA4 &amp; GTM Lead Tracking Implementation →</a>
-    </div>
-  </section>
+.nav__link--mobile-only{display:none}
 
-  <section class="case-section case-section--outcome">
-    <div class="container">
-      <p class="eyebrow reveal">07 — Status</p>
-      <p class="case-block__text reveal" style="max-width:640px">
-        The campaign is fully configured and paused prior to launch. No advertising spend or performance
-        results are reported. This case study documents the targeting, creative, and budget strategy
-        behind the campaign build. Once launched, it will provide a real-world test of paid search
-        performance alongside the measurement foundation already established for the business.
-      </p>
-    </div>
-  </section>
+.nav__actions{display:flex;align-items:center;gap:22px}
 
-</main>
+.nav__resume{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--muted);
+  transition:color .2s ease;
+}
+.nav__resume:hover{color:var(--text)}
 
-<footer class="site-footer">
-  <div class="container footer__inner">
-    <div>
-      <span class="footer__name">William Guenther</span>
-      <span class="footer__sub">Business Analytics · Marketing Analytics</span>
-    </div>
-    <div class="footer__links">
-      <a href="mailto:williamcguen@gmail.com">Email ↗</a>
-      <a href="https://www.linkedin.com/in/william-guenther" target="_blank">LinkedIn ↗</a>
-    </div>
-  </div>
-</footer>
+.btn-outline{
+  border:1px solid #35393c;
+  border-radius:6px;
+  padding:9px 16px;
+  font-family:var(--font-mono);
+  font-size:13px;
+  transition:border-color .2s ease,color .2s ease;
+}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 
-<script src="script.js"></script>
-</body>
-</html>
+.nav__toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:32px;
+  height:32px;
+  background:none;
+  border:none;
+  padding:0;
+  appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+}
+.nav__toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--text);
+  transition:transform .2s ease,opacity .2s ease;
+}
+.nav__toggle span+span{margin-top:5px}
+.nav__toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__toggle.is-open span:nth-child(2){opacity:0}
+.nav__toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== HERO ===== */
+.hero{padding:96px 0 110px}
+
+.hero__grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero__title{
+  font-family:var(--font-display);
+  font-size:clamp(38px,4.8vw,60px);
+  font-weight:600;
+  line-height:1.04;
+  letter-spacing:-2px;
+  margin-bottom:22px;
+}
+
+.hero__meta{
+  display:flex;
+  align-items:center;
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+
+.status-dot{
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--accent);
+  margin:0 7px 0 10px;
+  box-shadow:0 0 0 3px var(--accent-dim);
+}
+
+.hero__lead{
+  max-width:560px;
+  font-size:16.5px;
+  line-height:1.85;
+  color:var(--text-soft);
+  margin-bottom:18px;
+}
+.hero__lead strong{color:var(--text);font-weight:600}
+
+.hero__actions{display:flex;align-items:center;gap:26px;margin-top:26px}
+
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 20px;
+  border:1px solid #8a3a34;
+  border-radius:6px;
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--text);
+  transition:.2s ease;
+}
+.btn-primary:hover{background:var(--accent-dim);border-color:var(--accent)}
+.btn-primary span{transition:transform .2s ease}
+.btn-primary:hover span{transform:translateX(3px)}
+
+.btn-text{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--muted);
+  transition:color .2s ease;
+}
+.btn-text:hover{color:var(--accent)}
+
+/* ===== HERO VISUAL / PORTRAIT ===== */
+.hero__portrait{aspect-ratio:4/5;max-width:380px;margin-left:auto}
+.hero__portrait img{width:100%;height:100%;object-fit:cover}
+
+/* ===== (unused) SAMPLE DASHBOARD CARD, no page currently references these classes ===== */
+.visual-card{
+  background:var(--bg-raised);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px 26px 22px;
+}
+
+.visual-card__header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:22px;
+}
+.visual-card__title{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--text-soft);
+}
+.visual-card__tag{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--muted);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:3px 8px;
+}
+
+.visual-card__stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:24px;
+}
+.visual-stat{
+  border-top:1px solid var(--line);
+  padding-top:10px;
+}
+.visual-stat__label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.visual-stat strong{font-family:var(--font-display);font-size:20px;font-weight:600}
+
+.visual-card__chart{position:relative;height:96px;margin-bottom:16px}
+
+.chart-line{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.chart-line polyline{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.85;
+}
+
+.chart-bars{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+.chart-bars span{
+  flex:1;
+  height:var(--h);
+  background:linear-gradient(180deg,rgba(226,87,76,.5),rgba(226,87,76,.08));
+  border-radius:3px 3px 0 0;
+  transform:scaleY(0);
+  transform-origin:bottom;
+  animation:grow .8s ease forwards;
+  animation-delay:.3s;
+}
+
+@keyframes grow{to{transform:scaleY(1)}}
+
+.visual-card__footer{
+  display:flex;
+  justify-content:space-between;
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:.5px;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+
+/* ===== GENERIC SECTION ===== */
+.section{border-top:1px solid var(--line);padding:100px 0}
+.section--tight{padding:60px 0}
+
+.section__title{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4vw,44px);
+  font-weight:600;
+  letter-spacing:-1px;
+  line-height:1.15;
+  margin-bottom:18px;
+}
+
+.section__lead{
+  max-width:560px;
+  color:var(--text-soft);
+  font-size:16px;
+  margin-bottom:56px;
+}
+
+/* ===== SPECIALTIES ===== */
+.specialty-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+}
+.specialty{
+  padding:32px 26px 32px 0;
+  border-bottom:1px solid var(--line);
+}
+.specialty:not(:last-child){border-right:1px solid var(--line);margin-right:26px}
+.specialty__index{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--accent);
+  margin-bottom:30px;
+}
+.specialty h3{font-family:var(--font-display);font-size:18px;font-weight:600;margin-bottom:12px}
+.specialty p{color:var(--muted);font-size:14px;line-height:1.75}
+
+/* ===== TOOLKIT ===== */
+.toolkit{display:flex;flex-wrap:wrap;gap:12px}
+.toolkit span{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--text-soft);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:8px 16px;
+}
+
+/* ===== FOOTER ===== */
+.site-footer{border-top:1px solid var(--line);padding:34px 0}
+.footer__inner{display:flex;justify-content:space-between;align-items:center}
+.footer__name{display:block;font-size:14px;margin-bottom:3px}
+.footer__sub{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.footer__links{display:flex;gap:24px}
+.footer__links a{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.footer__links a:hover{color:var(--accent)}
+
+/* ===== PROJECTS PAGE ===== */
+.projects-hero{padding:80px 0 60px}
+
+.project-list{padding-bottom:60px}
+
+.project-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+  padding:70px 0;
+  border-top:1px solid var(--line);
+}
+.project-row--reverse .project-row__visual{order:-1}
+
+.project-row__meta{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:1px;
+  color:var(--accent);
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.project-row__meta span{color:var(--muted)}
+
+.project-row__title{
+  font-family:var(--font-display);
+  font-size:clamp(24px,3vw,32px);
+  font-weight:600;
+  letter-spacing:-.5px;
+  margin-bottom:16px;
+}
+
+.project-row__desc{
+  color:var(--text-soft);
+  font-size:15px;
+  line-height:1.8;
+  max-width:480px;
+  margin-bottom:22px;
+}
+
+.project-row__tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.project-row__tags span{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-soft);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:6px 14px;
+}
+
+.project-row__links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.project-row__soon{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--muted);
+  font-style:italic;
+}
+
+.project-row__visual{
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--bg-raised);
+}
+.project-row__visual img{width:100%;height:100%;object-fit:cover;display:block}
+
+.project-row__visual--soon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:220px;
+  padding:24px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.project-row--soon .project-row__title{color:var(--text-soft)}
+
+.status-pill{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:6px 14px;
+  width:fit-content;
+}
+
+/* ===== CASE STUDY PAGE ===== */
+.case-hero{padding:60px 0 70px}
+.case-hero__back{display:inline-block;margin-bottom:28px}
+
+.case-hero__meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:36px;
+  margin-top:36px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.case-hero__meta div{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--text-soft)}
+.case-hero__meta span{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.case-section{border-top:1px solid var(--line);padding:64px 0}
+.case-section--outcome{padding-bottom:90px}
+
+.case-section__grid{display:grid;grid-template-columns:220px 1fr;gap:40px}
+
+.case-block__label{font-family:var(--font-display);font-size:18px;font-weight:600;margin-bottom:10px}
+.case-block__text{color:var(--text-soft);font-size:15px;line-height:1.85}
+.case-block__text code{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--accent);
+  background:var(--bg-raised);
+  padding:2px 6px;
+  border-radius:4px;
+}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.measure-table{width:100%;border-collapse:collapse;min-width:520px}
+.measure-table th{
+  text-align:left;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:14px 18px;
+  background:var(--bg-raised);
+  border-bottom:1px solid var(--line);
+}
+.measure-table td{
+  padding:14px 18px;
+  font-size:14px;
+  color:var(--text-soft);
+  border-bottom:1px solid var(--line);
+}
+.measure-table tr:last-child td{border-bottom:none}
+.measure-table code{font-family:var(--font-mono);font-size:12.5px;color:var(--accent)}
+
+.screenshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.screenshot-grid--2{grid-template-columns:repeat(2,1fr)}
+.screenshot-grid--1{grid-template-columns:1fr;max-width:560px}
+.screenshot-frame{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-raised)}
+.screenshot-frame__ph{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:180px;
+  padding:20px;
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.screenshot-frame figcaption{
+  padding:12px 16px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-soft);
+  border-top:1px solid var(--line);
+}
+.screenshot-frame img{width:100%;display:block}
+
+.outcome-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.outcome-stat{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:26px 22px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.outcome-stat strong{font-family:var(--font-display);font-size:26px;font-weight:600}
+.outcome-stat span{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+
+/* ===== WORK PAGE ===== */
+.work-hero{padding:80px 0 60px}
+
+.timeline{border-top:1px solid var(--line)}
+
+.timeline-item{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:40px;
+  padding:36px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.timeline-item__meta{display:flex;flex-direction:column;gap:4px}
+.timeline-item__dates{font-family:var(--font-mono);font-size:13px;color:var(--text-soft)}
+.timeline-item__location{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+
+.timeline-item__body h3{
+  font-family:var(--font-display);
+  font-size:19px;
+  font-weight:600;
+  margin-bottom:14px;
+}
+.timeline-item__body h3 span{color:var(--muted);font-weight:500;font-size:16px}
+
+.timeline-item__body ul{display:flex;flex-direction:column;gap:8px}
+.timeline-item__body li{
+  position:relative;
+  padding-left:18px;
+  color:var(--text-soft);
+  font-size:14.5px;
+  line-height:1.7;
+}
+.timeline-item__body li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:10px;
+  width:8px;
+  height:1.5px;
+  background:var(--accent);
+}
+
+.timeline-item__note{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin-bottom:4px}
+
+.grad-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.grad-card{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+}
+.grad-card h3{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:6px}
+.grad-card__org{font-family:var(--font-mono);font-size:12px;color:var(--accent);margin-bottom:16px}
+.grad-card ul{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.grad-card li{
+  position:relative;
+  padding-left:16px;
+  color:var(--text-soft);
+  font-size:13.5px;
+  line-height:1.7;
+}
+.grad-card li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:9px;
+  width:7px;
+  height:1.5px;
+  background:var(--accent);
+}
+.grad-card .btn-text{margin-top:auto}
+
+
+/* ===== CONTACT PAGE CHART TOY (decorative, no data) ===== */
+.chart-toy{
+  position:relative;
+  aspect-ratio:3/2;
+  max-width:420px;
+  margin-left:auto;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:16px;
+  padding:8px 20px 28px;
+  overflow:hidden;
+}
+.chart-toy::before{
+  content:"";
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:28px;
+  height:1px;
+  background:var(--line);
+}
+.chart-toy__line{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+.chart-toy__line polyline{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:7 7;
+  animation:chart-line-flow 1s linear infinite;
+  filter:drop-shadow(0 2px 6px rgba(226,87,76,.5));
+}
+.chart-toy__line circle{
+  fill:var(--accent);
+  animation:chart-dot-pulse 2s ease-in-out infinite;
+}
+.chart-toy__line circle:nth-child(3){animation-delay:.3s}
+.chart-toy__line circle:nth-child(4){animation-delay:.6s}
+.chart-toy__line circle:nth-child(5){animation-delay:.9s}
+.chart-toy__line circle:nth-child(6){animation-delay:1.2s}
+.chart-toy__line circle:nth-child(7){animation-delay:1.5s}
+.chart-toy__line circle:nth-child(8){animation-delay:1.8s}
+@keyframes chart-line-flow{
+  to{stroke-dashoffset:-28}
+}
+@keyframes chart-dot-pulse{
+  0%,100%{r:4.5;opacity:1}
+  50%{r:6.5;opacity:.65}
+}
+.chart-toy__bar{
+  position:relative;
+  z-index:1;
+  width:30px;
+  border-radius:8px 8px 3px 3px;
+  background:linear-gradient(180deg, #d7d6d3 0%, #c3c2be 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+  transform-origin:bottom;
+  transition:background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  animation:chart-idle 4.2s ease-in-out infinite;
+}
+.chart-toy__bar:hover{
+  animation-play-state:paused;
+  background:linear-gradient(180deg, var(--accent) 0%, #a83a32 100%);
+  box-shadow:0 0 22px var(--accent-dim), inset 0 1px 0 rgba(255,255,255,.15);
+  transform:scaleY(1.1);
+}
+@keyframes chart-idle{
+  0%,100%{transform:scaleY(1)}
+  50%{transform:scaleY(1.04)}
+}
+
+/* ===== CONTACT PAGE DOODLE (decorative, no data) ===== */
+.contact-doodle{margin-top:40px}
+.contact-doodle svg{overflow:visible}
+.contact-doodle__plane{
+  transform-origin:center;
+  animation:doodle-plane-float 3.4s ease-in-out infinite;
+}
+.contact-doodle__dot{
+  transform-origin:center;
+  animation:doodle-dot-float 2.8s ease-in-out infinite;
+}
+.contact-doodle__dot--2{animation-delay:.5s}
+.contact-doodle__dot--3{animation-delay:1s}
+.contact-doodle__dot--4{animation-delay:1.5s}
+@keyframes doodle-plane-float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-9px) rotate(-3deg)}
+}
+@keyframes doodle-dot-float{
+  0%,100%{transform:translateY(0);opacity:.9}
+  50%{transform:translateY(-12px);opacity:.35}
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(16px);animation:reveal .7s ease forwards}
+.reveal-d1{animation-delay:.08s}
+.reveal-d2{animation-delay:.16s}
+.reveal-d3{animation-delay:.24s}
+@keyframes reveal{to{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  .chart-bars span{animation:none;transform:scaleY(1)}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero__grid{grid-template-columns:1fr;gap:50px}
+  .specialty-grid{grid-template-columns:repeat(2,1fr)}
+  .specialty:nth-child(2n){border-right:0;margin-right:0}
+  .project-row{grid-template-columns:1fr;gap:34px;padding:50px 0}
+  .project-row--reverse .project-row__visual{order:0}
+  .timeline-item{grid-template-columns:1fr;gap:14px}
+  .grad-grid{grid-template-columns:1fr}
+  .case-section__grid{grid-template-columns:1fr}
+  .screenshot-grid,.screenshot-grid--2{grid-template-columns:1fr}
+  .outcome-stats{grid-template-columns:1fr}
+  .case-hero__meta{gap:22px}
+}
+
+@media(max-width:760px){
+  .nav__links{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding:8px 24px 20px;
+  }
+  .nav__links.is-open{display:flex}
+  .nav__link{width:100%;padding:14px 0;border-bottom:1px solid var(--line)}
+  .nav__link--mobile-only{display:flex}
+  .nav__actions{display:none}
+  .nav__toggle{display:flex}
+
+  .hero{padding:64px 0 80px}
+  .hero__actions{flex-direction:column;align-items:flex-start;gap:18px}
+  .section{padding:70px 0}
+  .specialty-grid{grid-template-columns:1fr}
+  .specialty{border-right:0!important;margin-right:0!important}
+  .footer__inner{flex-direction:column;align-items:flex-start;gap:18px}
+}
