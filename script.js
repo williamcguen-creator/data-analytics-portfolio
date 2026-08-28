@@ -1,13 +1,3 @@
-/* ===== CUSTOM CURSOR ===== */
-const dot = document.querySelector(".cursor-dot");
-
-if (dot && matchMedia("(pointer: fine)").matches) {
-  document.addEventListener("mousemove", e => {
-    dot.style.left = `${e.clientX}px`;
-    dot.style.top = `${e.clientY}px`;
-  });
-}
-
 /* ===== MOBILE NAV TOGGLE ===== */
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
