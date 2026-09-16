@@ -108,6 +108,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section class="container" style="padding-bottom:100px">
+  <div class="contact-form-card reveal" style="max-width:640px">
+    <p class="eyebrow" style="margin-bottom:8px">Send a message</p>
+    <h2 style="font-family:var(--font-display);font-size:22px;margin-bottom:22px">Prefer a form? Use this instead.</h2>
+
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mljdrqgy" method="POST">
+
+      <div class="contact-form__row">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cf-reason">Reason for reaching out</label>
+        <select id="cf-reason" name="reason">
+          <option value="Job opportunity">Job opportunity</option>
+          <option value="Freelance / project work">Freelance / project work</option>
+          <option value="Just saying hi">Just saying hi</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" required></textarea>
+      </div>
+
+      <!-- Honeypot field: bots tend to fill this in, real visitors never see it -->
+      <div class="form-group form-group--hp" aria-hidden="true">
+        <label for="cf-company">Company</label>
+        <input type="text" id="cf-company" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn-primary interactive">
+        Send message <span>→</span>
+      </button>
+
+      <p class="form-note" id="cf-status"></p>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
@@ -124,5 +172,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script src="script.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('cf-status');
+  if(!form) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.textContent = 'Sending…';
+    status.className = 'form-note';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if(response.ok){
+        form.reset();
+        status.textContent = "Thanks — that's sent. I'll get back to you soon.";
+        status.className = 'form-note';
+      } else {
+        response.json().then(function(json){
+          var msg = (json && json.errors && json.errors.length) ? json.errors.map(function(e){return e.message;}).join(', ') : 'Something went wrong — try emailing me directly instead.';
+          status.textContent = msg;
+          status.className = 'form-note form-note--error';
+        }).catch(function(){
+          status.textContent = 'Something went wrong — try emailing me directly instead.';
+          status.className = 'form-note form-note--error';
+        });
+      }
+    }).catch(function(){
+      status.textContent = 'Something went wrong — try emailing me directly instead.';
+      status.className = 'form-note form-note--error';
+    });
+  });
+})();
+</script>
 </body>
 </html>
