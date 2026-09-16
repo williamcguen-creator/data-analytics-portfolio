@@ -50,19 +50,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main>
 
-<section class="case-hero" style="padding-bottom:40px">
-  <div class="container hero__grid">
+<section class="case-hero" style="padding-bottom:60px">
+  <div class="container hero__grid contact-hero-grid">
 
     <div>
       <p class="eyebrow reveal">Contact</p>
       <h1 class="section__title reveal" style="color:var(--accent)">Let's get in touch.</h1>
-      <p class="section__lead reveal" style="margin-bottom:0">
+      <p class="section__lead reveal">
         Fill out the form below and I'll get back to you shortly.
       </p>
+
+      <div class="contact-form-card reveal">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mljdrqgy" method="POST">
+
+          <div class="contact-form__row">
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-reason">Reason for reaching out</label>
+            <select id="cf-reason" name="reason">
+              <option value="Job opportunity">Job opportunity</option>
+              <option value="Freelance / project work">Freelance / project work</option>
+              <option value="Just saying hi">Just saying hi</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" required></textarea>
+          </div>
+
+          <!-- Honeypot field: bots tend to fill this in, real visitors never see it -->
+          <div class="form-group form-group--hp" aria-hidden="true">
+            <label for="cf-company">Company</label>
+            <input type="text" id="cf-company" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn-primary interactive">
+            Send message <span>→</span>
+          </button>
+
+          <p class="form-note" id="cf-status"></p>
+        </form>
+      </div>
     </div>
 
-    <div class="hero__visual reveal">
-      <div class="chart-toy">
+    <div class="hero__visual reveal contact-hero-grid__visual">
+      <div class="chart-toy contact-hero-grid__chart">
         <svg class="chart-toy__line" viewBox="0 0 420 280" preserveAspectRatio="none">
           <polyline points="72,187 118,137 164,167 210,107 256,152 302,122 348,177"></polyline>
           <circle cx="72" cy="187" r="4.5"></circle>
@@ -83,51 +126,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-  </div>
-</section>
-
-<section class="container" style="padding-bottom:60px">
-  <div class="contact-form-card reveal" style="max-width:640px">
-    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mljdrqgy" method="POST">
-
-      <div class="contact-form__row">
-        <div class="form-group">
-          <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" name="name" required autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" name="email" required autocomplete="email">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="cf-reason">Reason for reaching out</label>
-        <select id="cf-reason" name="reason">
-          <option value="Job opportunity">Job opportunity</option>
-          <option value="Freelance / project work">Freelance / project work</option>
-          <option value="Just saying hi">Just saying hi</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="cf-message">Message</label>
-        <textarea id="cf-message" name="message" required></textarea>
-      </div>
-
-      <!-- Honeypot field: bots tend to fill this in, real visitors never see it -->
-      <div class="form-group form-group--hp" aria-hidden="true">
-        <label for="cf-company">Company</label>
-        <input type="text" id="cf-company" name="_gotcha" tabindex="-1" autocomplete="off">
-      </div>
-
-      <button type="submit" class="btn-primary interactive">
-        Send message <span>→</span>
-      </button>
-
-      <p class="form-note" id="cf-status"></p>
-    </form>
   </div>
 </section>
 
