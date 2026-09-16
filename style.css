@@ -200,11 +200,27 @@ ul{list-style:none}
 .btn-text:hover{color:var(--accent)}
 
 /* ===== CONTACT FORM ===== */
+.contact-hero-grid{align-items:center}
+
+.contact-hero-grid__visual{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.contact-hero-grid__chart.chart-toy{
+  width:100%;
+  max-width:none;
+  margin-left:0;
+}
+
 .contact-form-card{
   background:var(--bg-raised);
   border:1px solid var(--line);
   border-radius:10px;
   padding:32px;
+  margin-top:32px;
 }
 
 .contact-form__row{
