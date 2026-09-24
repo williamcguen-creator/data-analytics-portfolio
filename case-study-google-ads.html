@@ -10,8 +10,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Ads Search Campaign | William Guenther</title>
-<meta name="description" content="A case study on building a controlled, budget-conscious Google Ads Search campaign for a local plumbing business's water heater services.">
+<title>Digital Marketing &amp; Performance Measurement | William Guenther</title>
+<meta name="description" content="A case study on building an end-to-end lead measurement system with GA4 and Google Tag Manager, plus a Google Ads Search campaign structure designed to feed into it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -54,16 +54,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <a href="projects.html" class="btn-text interactive case-hero__back">← All projects</a>
       <p class="eyebrow reveal">Case study</p>
-      <h1 class="section__title reveal">Google Ads Search Campaign</h1>
+      <h1 class="section__title reveal">Digital Marketing &amp;<br>Performance Measurement</h1>
       <p class="section__lead reveal">
-        Building a controlled, budget-conscious paid search strategy for a New Jersey plumbing
-        business's water heater services.
+        Building an end-to-end lead measurement system with GA4 and Google Tag Manager for a local
+        plumbing business, then structuring a Google Ads Search campaign designed to feed into it.
       </p>
       <div class="case-hero__meta reveal">
         <div><span>Client</span>Local plumbing business</div>
-        <div><span>Role</span>Paid media strategy</div>
-        <div><span>Tools</span>Google Ads</div>
-        <div><span>Status</span>Paused before launch</div>
+        <div><span>Role</span>Marketing analytics &amp; paid media strategy</div>
+        <div><span>Tools</span>GA4 · Google Tag Manager · Tag Assistant · Google Ads</div>
       </div>
     </div>
   </section>
@@ -74,16 +73,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="reveal">
         <h3 class="case-block__label">The challenge</h3>
         <p class="case-block__text">
-          The plumbing business had a working analytics foundation but no paid traffic actively driving
-          new leads. Water heater repair, replacement, and installation searches were identified as a
-          high-intent opportunity, since customers searching these terms are typically ready to act,
-          making them a strong fit for a first paid search test.
+          The plumbing business relied on phone calls and contact-form submissions to generate leads,
+          but lacked clear visibility into how visitors interacted with its website and which actions
+          actually resulted in potential customers. It also had no paid traffic actively driving new
+          leads, even though water heater repair, replacement, and installation searches stood out as
+          a high-intent opportunity worth testing.
         </p>
         <h3 class="case-block__label" style="margin-top:28px">The goal</h3>
         <p class="case-block__text">
-          Build a Google Ads Search campaign focused specifically on water heater service leads, using a
-          small, realistic budget rather than Google's default automated recommendations, and structure
-          it as a controlled initial test rather than an open-ended spend commitment.
+          Build a measurement system that could show how users were generating leads and which
+          marketing channels were driving those leads, then structure a Google Ads Search campaign
+          around water heater services whose conversion tracking would plug directly into that same
+          system.
         </p>
       </div>
     </div>
@@ -91,23 +92,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">02 — Campaign strategy</p>
-      <p class="case-block__text reveal" style="max-width:640px">
-        A Search campaign was chosen over Performance Max. Search keeps keyword targeting, ad copy, and
-        placement under direct control, which matters most for a first, limited-budget test where the
-        goal is to learn from search intent rather than hand budget decisions to full automation.
+      <p class="eyebrow reveal">02 — Measurement strategy</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        Both conversion actions were sent through GA4's <code>generate_lead</code> event, with a
+        <code>lead_type</code> parameter used to distinguish how each lead was generated. This avoided
+        needing a separate event for every lead method.
       </p>
+      <div class="table-wrap reveal">
+        <table class="measure-table">
+          <thead>
+            <tr><th>Interaction</th><th>GA4 event</th><th>Parameter</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Free quote submitted</td><td><code>generate_lead</code></td><td><code>lead_type</code></td><td><code>free_quote_form</code></td></tr>
+            <tr><td>Phone number clicked</td><td><code>generate_lead</code></td><td><code>lead_type</code></td><td><code>phone_call</code></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">03 — Targeting strategy</p>
+      <p class="eyebrow reveal">03 — Implementation</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Keywords were built around water heater repair, replacement, and installation searches, along
-        with related plumber and service-call terms, to capture users with clear purchase intent.
-        Geographic targeting was limited to the business's actual service area rather than targeting
-        traffic indiscriminately.
+        Configured separate GTM triggers for successful form submissions and phone-link clicks. The
+        phone trigger fires on any <code>Click URL</code> starting with <code>tel:</code>, a generic
+        match rather than one hardcoded number, so it works regardless of which phone number appears
+        on the page. Both triggers feed into a consistent GA4 lead measurement structure.
+      </p>
+      <div class="screenshot-grid reveal">
+        <figure class="screenshot-frame">
+          <img src="GA4 GTM Lead Tracking/free-quote-tag.png" alt="GA4 Generate Lead Free Quote Form tag configuration showing lead_type parameter set to free_quote_form">
+          <figcaption>Form-submission tag configuration</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="GA4 GTM Lead Tracking/phone-call-trigger.png" alt="GTM Phone Call - Link Call trigger, Click URL starts with tel:">
+          <figcaption>Phone-call click trigger</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="GA4 GTM Lead Tracking/tag-assistant-summary.png" alt="Tag Assistant summary showing all three tags fired successfully">
+          <figcaption>Tag Assistant validation — all tags fired</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container">
+      <p class="eyebrow reveal">04 — Validation</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        GA4 DebugView confirmed the <code>lead_type</code> parameter successfully traveled from the
+        website through GTM into GA4 for both lead methods. The parameter was then registered as an
+        event-scoped custom dimension, and <code>generate_lead</code> was marked as a key event,
+        connecting the technical setup to actual marketing reporting.
+      </p>
+      <div class="screenshot-grid screenshot-grid--1 reveal">
+        <figure class="screenshot-frame">
+          <img src="GA4 GTM Lead Tracking/debugview.png" alt="GA4 DebugView showing generate_lead events with lead_type values phone_call and free_quote_form">
+          <figcaption>DebugView — both lead types confirmed</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container">
+      <p class="eyebrow reveal">05 — Paid search campaign planning</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:12px">
+        With lead measurement in place, the next piece was structuring a Google Ads Search campaign
+        for the same business, targeting water heater repair, replacement, and installation searches
+        within its service area on a controlled, realistic budget. A Search campaign was chosen over
+        Performance Max so that keyword targeting, ad copy, and placement stayed under direct control.
+      </p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        Keywords were built around water heater and related plumber service-call terms to capture
+        clear purchase intent, geographic targeting was limited to the business's actual service area,
+        and a Responsive Search Ad was built with multiple headline and description variations covering
+        the core services. The daily budget was set at $16.50 (roughly $500 per month) with a Maximize
+        Conversions bidding strategy and lead-form submissions as the conversion goal — tying directly
+        back into the <code>generate_lead</code> event structure above.
       </p>
       <div class="screenshot-grid screenshot-grid--2 reveal">
         <figure class="screenshot-frame">
@@ -118,36 +182,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="Google Ads Search Campaign/location-targeting.png" alt="Google Ads Locations report showing campaign targeting limited to New Jersey service-area cities">
           <figcaption>Service-area targeting</figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">04 — Ad creation</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        A Responsive Search Ad was built with multiple headline and description variations covering
-        the core water heater services and a clear call to action, so Google can test combinations and
-        serve the strongest-performing version once the campaign is live.
-      </p>
-      <div class="screenshot-grid screenshot-grid--1 reveal" style="max-width:100%">
         <figure class="screenshot-frame">
           <img src="Google Ads Search Campaign/responsive-search-ad-preview.png" alt="Google Ads Responsive Search Ad headline assets, including water heater repair, installation, and replacement variations">
           <figcaption>Responsive Search Ad headline assets</figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">05 — Budget &amp; bidding</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Rather than following Google's higher automated budget recommendation, the campaign was set to
-        an average daily budget of $16.50 (approximately $500 per month) with a Maximize Conversions
-        bidding strategy, keeping the initial test financially realistic for a small local business.
-      </p>
-      <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
           <img src="Google Ads Search Campaign/budget-bidding.png" alt="Google Ads campaign settings showing Maximize Conversions bidding, a $16.50 daily budget, and Submit lead forms as the conversion goal">
           <figcaption>Budget &amp; bidding configuration</figcaption>
@@ -156,28 +194,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section class="case-section">
-    <div class="container">
-      <p class="eyebrow reveal">06 — Measurement connection</p>
-      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:20px">
-        This campaign was not built in isolation. Its conversion goal is set to lead-form submissions,
-        and it relies on the GA4 and Google Tag Manager implementation already in place for the same
-        business, which captures contact-form submissions and phone-number clicks as
-        <code>generate_lead</code> events. Once live, that existing measurement framework is what will
-        let this campaign's leads be evaluated.
-      </p>
-      <a href="case-study-ga4-lead-tracking.html" class="btn-text interactive reveal">See the related GA4 &amp; GTM Lead Tracking Implementation →</a>
-    </div>
-  </section>
-
   <section class="case-section case-section--outcome">
     <div class="container">
-      <p class="eyebrow reveal">07 — Status</p>
+      <p class="eyebrow reveal">06 — Outcome</p>
       <p class="case-block__text reveal" style="max-width:640px">
-        The campaign is fully configured and paused prior to launch. No advertising spend or performance
-        results are reported. This case study documents the targeting, creative, and budget strategy
-        behind the campaign build. Once launched, it will provide a real-world test of paid search
-        performance alongside the measurement foundation already established for the business.
+        Together, these two pieces form a single measurement-to-acquisition framework: a GA4 and GTM
+        setup that captures the site's primary lead actions by type and source, and a Google Ads Search
+        campaign structure whose keyword targeting, creative, budget, and conversion goal were all
+        planned to report directly into that same framework.
       </p>
     </div>
   </section>
