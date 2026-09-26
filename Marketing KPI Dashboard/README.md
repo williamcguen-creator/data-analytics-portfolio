@@ -1,1 +1,1 @@
-Power BI dashboard analyzing marketing engagement, conversion trends, and KPI performance metrics. The visualization highlights campaign effectiveness and supports data-driven business decision-making.
+Interactive Tableau dashboard comparing campaign conversion performance across marketing channels (Email, Print, Radio, Search, Social, TV), including a channel-hierarchy treemap view. Highlights which channels and individual campaigns are driving the most conversions.

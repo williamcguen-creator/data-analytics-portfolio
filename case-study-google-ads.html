@@ -69,7 +69,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container case-section__grid">
-      <p class="eyebrow reveal">01 — Overview</p>
+      <p class="eyebrow reveal">01 · Overview</p>
       <div class="reveal">
         <h3 class="case-block__label">The challenge</h3>
         <p class="case-block__text">
@@ -92,7 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">02 — Measurement strategy</p>
+      <p class="eyebrow reveal">02 · Measurement strategy</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         Both conversion actions were sent through GA4's <code>generate_lead</code> event, with a
         <code>lead_type</code> parameter used to distinguish how each lead was generated. This avoided
@@ -114,7 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">03 — Implementation</p>
+      <p class="eyebrow reveal">03 · Implementation</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         Configured separate GTM triggers for successful form submissions and phone-link clicks. The
         phone trigger fires on any <code>Click URL</code> starting with <code>tel:</code>, a generic
@@ -132,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </figure>
         <figure class="screenshot-frame">
           <img src="GA4 GTM Lead Tracking/tag-assistant-summary.png" alt="Tag Assistant summary showing all three tags fired successfully">
-          <figcaption>Tag Assistant validation — all tags fired</figcaption>
+          <figcaption>Tag Assistant validation, all tags fired</figcaption>
         </figure>
       </div>
     </div>
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">04 — Validation</p>
+      <p class="eyebrow reveal">04 · Validation</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         GA4 DebugView confirmed the <code>lead_type</code> parameter successfully traveled from the
         website through GTM into GA4 for both lead methods. The parameter was then registered as an
@@ -150,7 +150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
           <img src="GA4 GTM Lead Tracking/debugview.png" alt="GA4 DebugView showing generate_lead events with lead_type values phone_call and free_quote_form">
-          <figcaption>DebugView — both lead types confirmed</figcaption>
+          <figcaption>DebugView, both lead types confirmed</figcaption>
         </figure>
       </div>
     </div>
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">05 — Paid search campaign planning</p>
+      <p class="eyebrow reveal">05 · Paid search campaign planning</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:12px">
         With lead measurement in place, the next piece was structuring a Google Ads Search campaign
         for the same business, targeting water heater repair, replacement, and installation searches
@@ -170,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         clear purchase intent, geographic targeting was limited to the business's actual service area,
         and a Responsive Search Ad was built with multiple headline and description variations covering
         the core services. The daily budget was set at $16.50 (roughly $500 per month) with a Maximize
-        Conversions bidding strategy and lead-form submissions as the conversion goal — tying directly
+        Conversions bidding strategy and lead-form submissions as the conversion goal, tying directly
         back into the <code>generate_lead</code> event structure above.
       </p>
       <div class="screenshot-grid screenshot-grid--2 reveal">
@@ -196,9 +196,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section case-section--outcome">
     <div class="container">
-      <p class="eyebrow reveal">06 — Outcome</p>
+      <p class="eyebrow reveal">06 · Outcome</p>
       <p class="case-block__text reveal" style="max-width:640px">
-        Together, these two pieces form a single measurement-to-acquisition framework: a GA4 and GTM
+        Together, these two pieces form a single measurement-to-acquisition framework, a GA4 and GTM
         setup that captures the site's primary lead actions by type and source, and a Google Ads Search
         campaign structure whose keyword targeting, creative, budget, and conversion goal were all
         planned to report directly into that same framework.

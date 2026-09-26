@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marketing KPI Dashboard | William Guenther</title>
-<meta name="description" content="A Power BI dashboard analyzing marketing revenue trends and regional performance to support business decision-making.">
+<meta name="description" content="An interactive Tableau dashboard analyzing campaign conversion performance across marketing channels to support business decision-making.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -56,33 +56,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="eyebrow reveal">Case study</p>
       <h1 class="section__title reveal">Marketing KPI<br>Dashboard</h1>
       <p class="section__lead reveal">
-        A Power BI dashboard tracking marketing revenue over time and across regions, built to
-        support fast, data-driven business decisions.
+        An interactive Tableau dashboard comparing campaign conversion performance across
+        marketing channels and channel types.
       </p>
       <div class="case-hero__meta reveal">
         <div><span>Type</span>Marketing analytics</div>
         <div><span>Role</span>Dashboard design &amp; analysis</div>
-        <div><span>Tools</span>Power BI</div>
+        <div><span>Tools</span>Tableau</div>
       </div>
     </div>
   </section>
 
   <section class="case-section">
     <div class="container case-section__grid">
-      <p class="eyebrow reveal">01 — Overview</p>
+      <p class="eyebrow reveal">01 · Overview</p>
       <div class="reveal">
         <h3 class="case-block__label">The question</h3>
         <p class="case-block__text">
-          Revenue totals alone don't tell a marketing team much without context: is revenue trending
-          up or down, and is performance even across the business's regions? This dashboard was
-          built to answer both questions in one place using Power BI.
+          A marketing dataset spanning dozens of campaigns across six channels, Email, Print,
+          Radio, Search, Social, and TV, raises two practical questions for a manager. Which
+          individual campaigns are converting best, and which broader channel groupings are
+          actually driving those conversions?
         </p>
         <h3 class="case-block__label" style="margin-top:28px">The approach</h3>
         <p class="case-block__text">
-          Revenue was modeled on a monthly time hierarchy to support a clean trend view, then broken
-          out by region to compare performance across the business's four operating areas. Together,
-          the two views separate "how is revenue moving over time" from "where is revenue coming
-          from" — two questions that get muddled if you only build one chart.
+          I built two complementary views in Tableau. A campaign-level bar chart colored by
+          channel, for spotting individual over- and under-performers, and a treemap grouping
+          conversions by channel hierarchy (Digital vs. Offline, then by specific channel), for
+          seeing the bigger allocation picture at a glance.
         </p>
       </div>
     </div>
@@ -90,17 +91,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">02 — Revenue trend</p>
+      <p class="eyebrow reveal">02 · Campaign-level comparison</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Monthly revenue holds a consistent, seasonal rhythm across the three years shown, cycling
-        between roughly $2.5M and $3.8M with no sustained upward or downward trend. That's a useful
-        finding on its own: it tells management that revenue swings are seasonal and recurring
-        rather than a signal of decline, which changes how those dips should be planned for.
+        Coloring each campaign bar by its channel makes it possible to scan dozens of campaigns at
+        once and see whether high performers cluster in a particular channel or are spread evenly,
+        a pattern that's invisible in a flat table of campaign IDs and conversion counts.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
-          <img src="Marketing KPI Dashboard/Monthly Revenue Trend Dashboard.png" alt="Power BI line chart showing monthly revenue from 2023 to 2025, fluctuating seasonally between roughly $2.5M and $3.8M">
-          <figcaption>Monthly revenue trend, 2023–2025</figcaption>
+          <img src="Marketing KPI Dashboard/Campaign Conversion Comparison.png" alt="Tableau bar chart comparing conversions across dozens of individual campaigns, colored by marketing channel (Email, Print, Radio, Search, Social, TV)">
+          <figcaption>Campaign conversion comparison, by channel</figcaption>
         </figure>
       </div>
     </div>
@@ -108,18 +108,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">03 — Regional performance</p>
+      <p class="eyebrow reveal">03 · Channel hierarchy view</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        Breaking total revenue out by region shows the South leading at roughly $31M, with the East
-        close behind and the North and West trailing at a similar level to each other. The gap
-        between the top and bottom region is narrow enough that no single region is carrying the
-        business, which points toward incremental, region-specific tactics rather than a
-        wholesale strategy shift.
+        Rolling conversions up into a Digital vs. Offline hierarchy shows Digital channels,
+        particularly Email and Social, holding the largest blocks of conversions, with Offline
+        channels like TV and Radio contributing meaningfully but at a smaller scale. This is the
+        view built for a budget conversation. It shows where conversions are concentrated without
+        losing the individual-campaign detail available in the chart above.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
-          <img src="Marketing KPI Dashboard/Regional Revenue Dashboard.png" alt="Power BI bar chart showing total revenue by region: South leading at roughly $31M, followed by East, then North and West trailing closely">
-          <figcaption>Total revenue by region</figcaption>
+          <img src="Marketing KPI Dashboard/Treemap Dashboard.png" alt="Tableau treemap showing marketing conversion performance grouped by Digital and Offline channel hierarchy, with Email and Social as the largest segments">
+          <figcaption>Conversion performance by channel hierarchy</figcaption>
         </figure>
       </div>
     </div>
@@ -127,12 +127,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section case-section--outcome">
     <div class="container">
-      <p class="eyebrow reveal">04 — Outcome</p>
+      <p class="eyebrow reveal">04 · Outcome</p>
       <p class="case-block__text reveal" style="max-width:640px">
-        Together, the time and regional views give management a fast read on both dimensions of
-        marketing performance: whether revenue is moving because of seasonality or something more
-        structural, and whether that performance is spread evenly across the business or
-        concentrated in one place.
+        Pairing a granular campaign-level chart with a rolled-up hierarchy view lets a manager move
+        between two levels of decision-making, which specific campaigns to optimize or cut, and
+        which broader channels deserve more budget, without needing two separate reports.
       </p>
     </div>
   </section>

@@ -184,20 +184,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }).then(function(response){
       if(response.ok){
         form.reset();
-        status.textContent = "Thanks — that's sent. I'll get back to you soon.";
+        status.textContent = "Thanks, that's sent. I'll get back to you soon.";
         status.className = 'form-note';
       } else {
         response.json().then(function(json){
-          var msg = (json && json.errors && json.errors.length) ? json.errors.map(function(e){return e.message;}).join(', ') : 'Something went wrong — try emailing me directly instead.';
+          var msg = (json && json.errors && json.errors.length) ? json.errors.map(function(e){return e.message;}).join(', ') : 'Something went wrong, try emailing me directly instead.';
           status.textContent = msg;
           status.className = 'form-note form-note--error';
         }).catch(function(){
-          status.textContent = 'Something went wrong — try emailing me directly instead.';
+          status.textContent = 'Something went wrong, try emailing me directly instead.';
           status.className = 'form-note form-note--error';
         });
       }
     }).catch(function(){
-      status.textContent = 'Something went wrong — try emailing me directly instead.';
+      status.textContent = 'Something went wrong, try emailing me directly instead.';
       status.className = 'form-note form-note--error';
     });
   });

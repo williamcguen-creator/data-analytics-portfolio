@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Airline Operations Performance Analysis | William Guenther</title>
-<meta name="description" content="A BAN 650 group capstone project analyzing airline operational performance — flight volume, delays, on-time rates, seasonality, and geography — in Tableau.">
+<meta name="description" content="A BAN 650 group capstone project analyzing airline operational performance, including flight volume, delays, on-time rates, seasonality, and geography, in Tableau.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1 class="section__title reveal">Airline Operations<br>Performance Analysis</h1>
       <p class="section__lead reveal">
         A seven-visualization Tableau analysis of airline flight volume, delays, on-time
-        performance, seasonality, and geography — built for BAN 650: Data Visualization for
+        performance, seasonality, and geography, built for BAN 650, Data Visualization for
         Managers, progressing from foundational comparisons to multivariate and geospatial views.
       </p>
       <div class="case-hero__meta reveal">
@@ -71,20 +71,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container case-section__grid">
-      <p class="eyebrow reveal">01 — Overview</p>
+      <p class="eyebrow reveal">01 · Overview</p>
       <div class="reveal">
         <h3 class="case-block__label">The brief</h3>
         <p class="case-block__text">
           Using a class airline flight dataset covering five carriers and sixteen origin airports,
           our team was asked to help managers understand patterns in flight activity, delays, and
-          cancellations through data visualization — starting with foundational comparisons, then
+          cancellations through data visualization, starting with foundational comparisons, then
           layering in distribution, time, geography, and multivariate views to add context a single
           chart couldn't provide.
         </p>
         <h3 class="case-block__label" style="margin-top:28px">My role</h3>
         <p class="case-block__text">
           Working within a seven-person team, I contributed to the foundational and distribution
-          analysis and took the lead on the geospatial and multivariate sections — including
+          analysis and took the lead on the geospatial and multivariate sections, including
           identifying the color-scaling issue described in Section 06 below, which became a key
           ethical finding in our final narrative.
         </p>
@@ -94,19 +94,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">02 — Foundational analysis: flight volume</p>
+      <p class="eyebrow reveal">02 · Foundational analysis, flight volume</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        A bar chart comparing total flights per airline was the natural starting point: it lets
-        managers compare volume across categories at a glance. The dataset turned out to be
-        remarkably balanced — Delta leads with 7,035 flights and United trails with 6,940, a gap of
+        A bar chart comparing total flights per airline was the natural starting point, since it
+        lets managers compare volume across categories at a glance. The dataset turned out to be
+        remarkably balanced. Delta leads with 7,035 flights and United trails with 6,940, a gap of
         under 2%. That balance matters for everything that follows, since it means later
         differences in delay or on-time performance can't be explained away by one airline simply
         flying more.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
-          <img src="BAN650 Airline Operations/fig1-flight-volume.png" alt="Tableau bar chart of total flights by airline: Delta 7,035, American 7,031, JetBlue 7,016, Southwest 6,978, United 6,940">
-          <figcaption>Figure 1 — Total flight volume by airline</figcaption>
+          <img src="BAN650 Airline Operations/fig1-flight-volume.png" alt="Tableau bar chart of total flights by airline. Delta 7,035, American 7,031, JetBlue 7,016, Southwest 6,978, United 6,940">
+          <figcaption>Figure 1, total flight volume by airline</figcaption>
         </figure>
       </div>
     </div>
@@ -114,26 +114,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">03 — Delay &amp; on-time comparison</p>
+      <p class="eyebrow reveal">03 · Delay &amp; on-time comparison</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:12px">
         With volume established as balanced, average delay minutes became the more meaningful
         performance measure. Southwest showed the weakest average delay (13.0 minutes) while
-        JetBlue performed best (12.2), with the field otherwise clustered closely — a ranking that
+        JetBlue performed best (12.2), with the field otherwise clustered closely, a ranking that
         doesn't track with flight volume at all, confirming that delay differences reflect
         something other than scale.
       </p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        A companion on-time percentage chart added a second, standardized reliability measure:
-        four of the five airlines tied at 82% on-time, with Southwest again the outlier at 81%.
+        A companion on-time percentage chart added a second, standardized reliability measure.
+        Four of the five airlines tied at 82% on-time, with Southwest again the outlier at 81%.
       </p>
       <div class="screenshot-grid screenshot-grid--2 reveal">
         <figure class="screenshot-frame">
-          <img src="BAN650 Airline Operations/fig2-avg-delay.png" alt="Tableau bar chart of average delay minutes by airline: Southwest 13.0, United 12.7, American 12.3, Delta 12.2, JetBlue 12.2">
-          <figcaption>Figure 2 — Average delay minutes by airline</figcaption>
+          <img src="BAN650 Airline Operations/fig2-avg-delay.png" alt="Tableau bar chart of average delay minutes by airline. Southwest 13.0, United 12.7, American 12.3, Delta 12.2, JetBlue 12.2">
+          <figcaption>Figure 2, average delay minutes by airline</figcaption>
         </figure>
         <figure class="screenshot-frame">
-          <img src="BAN650 Airline Operations/fig3-ontime-pct.png" alt="Tableau bar chart of on-time percentage by airline: JetBlue, American, Delta, and United tied at 82%, Southwest at 81%">
-          <figcaption>Figure 3 — On-time percentage by airline</figcaption>
+          <img src="BAN650 Airline Operations/fig3-ontime-pct.png" alt="Tableau bar chart of on-time percentage by airline. JetBlue, American, Delta, and United tied at 82%, Southwest at 81%">
+          <figcaption>Figure 3, on-time percentage by airline</figcaption>
         </figure>
       </div>
     </div>
@@ -141,19 +141,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">04 — Distribution view</p>
+      <p class="eyebrow reveal">04 · Distribution view</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         Averages can hide as much as they reveal, so we added a distribution chart showing every
-        flight's delay by airline. The result is a right-skewed pattern across all five carriers —
-        most flights run close to on-time, but each airline has a long tail of extreme outliers
-        running past 200 minutes. Airlines with similar averages can still carry very different
-        amounts of this tail risk, which is exactly the kind of operational instability a mean
-        value alone would mask.
+        flight's delay by airline. The result is a right-skewed pattern across all five carriers,
+        where most flights run close to on-time, but each airline has a long tail of extreme
+        outliers running past 200 minutes. Airlines with similar averages can still carry very
+        different amounts of this tail risk, which is exactly the kind of operational instability
+        a mean value alone would mask.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
           <img src="BAN650 Airline Operations/fig4-distribution.png" alt="Tableau distribution chart showing delay minutes by airline for American, Delta, JetBlue, Southwest, and United, with a right-skewed spread and frequent high outliers">
-          <figcaption>Figure 4 — Distribution of delay performance by airline</figcaption>
+          <figcaption>Figure 4, distribution of delay performance by airline</figcaption>
         </figure>
       </div>
     </div>
@@ -161,10 +161,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">05 — Temporal analysis</p>
+      <p class="eyebrow reveal">05 · Temporal analysis</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         Plotting average delay by month across the full year surfaces a seasonal, cyclical pattern
-        rather than a steady trend — delays climb through the summer and again in the late fall,
+        rather than a steady trend. Delays climb through the summer and again in the late fall,
         with a sharp dip around August. That pattern points management toward targeted fixes
         (scheduling buffers, added staffing during peak months) rather than a system-wide response,
         since the data shows a recurring operational challenge rather than a permanent decline.
@@ -172,7 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
           <img src="BAN650 Airline Operations/fig5-monthly-trend.png" alt="Tableau line chart of average delay minutes by month, showing peaks in early summer and November and a sharp dip in August">
-          <figcaption>Figure 5 — Average delay minutes by month</figcaption>
+          <figcaption>Figure 5, average delay minutes by month</figcaption>
         </figure>
       </div>
     </div>
@@ -180,24 +180,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">06 — Geospatial analysis</p>
+      <p class="eyebrow reveal">06 · Geospatial analysis</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:12px">
         Mapping average delay by origin airport shows a mild east-leaning pattern, with the three
         highest-delay airports (LGA, PHL, BOS) all sitting on the Northeast corridor. But the actual
-        spread across all sixteen airports is only 2.2 minutes — from 11.5 at MSP to 13.7 at LGA.
+        spread across all sixteen airports is only 2.2 minutes, from 11.5 at MSP to 13.7 at LGA.
       </p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
-        That narrow range was the central ethical finding of this section: Tableau's default color
+        That narrow range was the central ethical finding of this section. Tableau's default color
         scale stretches that 2.2-minute spread across its full palette, making the geographic
         pattern look far more dramatic than the underlying numbers support. Presented at face
-        value, the map invites a manager to over-trust the visual ranking — a good example of why
+        value, the map invites a manager to over-trust the visual ranking, a good example of why
         chart defaults need to be checked against the actual magnitudes before they inform a
         decision.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
           <img src="BAN650 Airline Operations/fig6-geospatial-map.png" alt="Tableau map of average delay minutes by origin airport across the continental United States, color-scaled from 11.5 to 13.7 minutes with the highest averages concentrated in the Northeast">
-          <figcaption>Figure 6 — Average delay minutes by origin airport</figcaption>
+          <figcaption>Figure 6, average delay minutes by origin airport</figcaption>
         </figure>
       </div>
     </div>
@@ -205,19 +205,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section">
     <div class="container">
-      <p class="eyebrow reveal">07 — Multivariate analysis</p>
+      <p class="eyebrow reveal">07 · Multivariate analysis</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
         A final scatter plot combined flight volume, average delay, and on-time percentage in one
-        view to test whether higher volume drives worse performance. It doesn't: Delta, American,
+        view to test whether higher volume drives worse performance. It doesn't. Delta, American,
         and JetBlue cluster together with high volume and low delay, while Southwest stands apart
         with noticeably higher delay at a comparable volume. As with the geography view, the x-axis
-        compression is worth flagging — the real spread in flight volume across all five airlines
-        is less than 2%, even though the chart's default scaling can make it look larger.
+        compression is worth flagging, since the real spread in flight volume across all five
+        airlines is less than 2%, even though the chart's default scaling can make it look larger.
       </p>
       <div class="screenshot-grid screenshot-grid--1 reveal">
         <figure class="screenshot-frame">
           <img src="BAN650 Airline Operations/fig7-multivariate.png" alt="Tableau scatter plot of flight volume versus average delay minutes by airline, colored by on-time percentage, showing Delta, American, and JetBlue clustered with low delay and Southwest as an outlier with higher delay">
-          <figcaption>Figure 7 — Flight volume, delay, and reliability by airline</figcaption>
+          <figcaption>Figure 7, flight volume, delay, and reliability by airline</figcaption>
         </figure>
       </div>
     </div>
@@ -225,18 +225,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="case-section case-section--outcome">
     <div class="container">
-      <p class="eyebrow reveal">08 — Outcome &amp; ethical considerations</p>
+      <p class="eyebrow reveal">08 · Outcome &amp; ethical considerations</p>
       <p class="case-block__text reveal" style="max-width:640px;margin-bottom:16px">
-        The seven visualizations build in a deliberate sequence — from balanced baseline comparisons
-        to distribution, time, geography, and multivariate trade-offs — so that management comes
-        away understanding not just which airlines perform better or worse, but where averages and
-        default chart scaling might be masking or exaggerating the real variation underneath.
+        The seven visualizations build in a deliberate sequence, moving from balanced baseline
+        comparisons to distribution, time, geography, and multivariate trade-offs, so that
+        management comes away understanding not just which airlines perform better or worse, but
+        where averages and default chart scaling might be masking or exaggerating the real
+        variation underneath.
       </p>
       <p class="case-block__text reveal" style="max-width:640px">
-        The project's clearest takeaway was ethical rather than statistical: both the geographic map
-        and the multivariate scatter plot used auto-scaled axes that made small, real differences
-        look dramatic. Flagging that limitation directly in the report — rather than letting the
-        default visual speak for itself — was central to presenting the analysis responsibly.
+        The project's clearest takeaway was ethical rather than statistical. Both the geographic
+        map and the multivariate scatter plot used auto-scaled axes that made small, real
+        differences look dramatic. Flagging that limitation directly in the report, rather than
+        letting the default visual speak for itself, was central to presenting the analysis
+        responsibly.
       </p>
     </div>
   </section>
