@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MF5KTT6L');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Assisted IT Operations Visualization | William Guenther</title>
+<meta name="description" content="A Tableau dashboard analyzing monthly IT ticket volume trends, built with AI-assisted analysis to surface operational fluctuations against a baseline average.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF5KTT6L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="/">william<span>.</span>guenther</a>
+
+    <nav class="nav__links" id="navLinks">
+      <a class="nav__link" href="/">About</a>
+      <a class="nav__link is-active" href="projects.html">Projects</a>
+      <a class="nav__link" href="work.html">Work</a>
+      <a class="nav__link" href="education.html">Education</a>
+      <a class="nav__link nav__link--mobile-only" href="resume.html">Résumé</a>
+      <a class="nav__link nav__link--mobile-only" href="contact.html">Get in touch</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__resume" href="resume.html">Résumé</a>
+      <a class="btn-outline" href="contact.html">Get in touch</a>
+    </div>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="case-hero">
+    <div class="container">
+      <a href="projects.html" class="btn-text interactive case-hero__back">← All projects</a>
+      <p class="eyebrow reveal">Case study</p>
+      <h1 class="section__title reveal">AI-Assisted IT<br>Operations Visualization</h1>
+      <p class="section__lead reveal">
+        A Tableau dashboard analyzing monthly IT ticket volume, using an AI-assisted workflow to
+        speed up chart iteration and flag the months worth a closer look.
+      </p>
+      <div class="case-hero__meta reveal">
+        <div><span>Type</span>IT operations analytics</div>
+        <div><span>Role</span>Dashboard design &amp; analysis</div>
+        <div><span>Tools</span>Tableau · Generative AI</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container case-section__grid">
+      <p class="eyebrow reveal">01 — Overview</p>
+      <div class="reveal">
+        <h3 class="case-block__label">The question</h3>
+        <p class="case-block__text">
+          IT ticket volume is easy to track but hard to read month to month — a raw count doesn't
+          tell you whether a given month was actually unusual. The goal was a single view that lets
+          an operations manager see monthly ticket volume against a baseline at a glance, rather
+          than scanning a table of numbers.
+        </p>
+        <h3 class="case-block__label" style="margin-top:28px">The approach</h3>
+        <p class="case-block__text">
+          Ticket data was aggregated by month in Tableau and plotted as a line against a reference
+          line for the average ticket volume across the full period. I used a generative AI tool
+          alongside Tableau to speed up early exploration — testing chart types, checking that the
+          reference-line approach was the clearest way to show deviation, and sanity-checking the
+          resulting trend before finalizing the visualization.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="container">
+      <p class="eyebrow reveal">02 — The dashboard</p>
+      <p class="case-block__text reveal" style="max-width:640px;margin-bottom:28px">
+        Plotting monthly ticket counts against the average line immediately separates ordinary
+        month-to-month noise from real spikes and dips. The chart shows ticket volume holding close
+        to its ~300-ticket average for most of the period, with two clear departures: a sharp drop
+        in December 2024 and a pronounced spike around June 2025 — the two points an operations
+        team would want to investigate first.
+      </p>
+      <div class="screenshot-grid screenshot-grid--1 reveal">
+        <figure class="screenshot-frame">
+          <img src="AI-Assisted IT Operations Visualization/Monthly Ticket Volume Trend.png" alt="Tableau line chart of monthly IT ticket volume from December 2023 through December 2025, plotted against a dashed average ticket volume reference line">
+          <figcaption>Monthly ticket volume vs. average</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section--outcome">
+    <div class="container">
+      <p class="eyebrow reveal">03 — Outcome</p>
+      <p class="case-block__text reveal" style="max-width:640px">
+        A single reference line turns a routine ticket-volume chart into a screening tool: instead
+        of asking "was this a normal month," the manager just looks at which points fall away from
+        the line. It's a small design choice, but it's the difference between a chart that reports
+        data and one that actually flags where to look next.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div>
+      <span class="footer__name">William Guenther</span>
+      <span class="footer__sub">Business Analytics · Marketing Analytics</span>
+    </div>
+    <div class="footer__links">
+      <a href="mailto:williamcguen@gmail.com">Email ↗</a>
+      <a href="https://www.linkedin.com/in/william-guenther" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
